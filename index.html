@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Литература · 14 дней — Курс подготовки к сочинениям и эссе</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4ede0;
+    --paper-dark: #ebe2d0;
+    --ink: #1a1f1a;
+    --ink-soft: #3a3f3a;
+    --moss: #2d4a2b;
+    --moss-light: #4a6b48;
+    --ochre: #b8722c;
+    --ochre-soft: #d49555;
+    --crimson: #8b2820;
+    --rule: #8a8472;
+    --shadow: rgba(26, 31, 26, 0.08);
+
+    --serif: 'Cormorant Garamond', 'Times New Roman', serif;
+    --mono: 'JetBrains Mono', 'Courier New', monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(180, 160, 110, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(140, 110, 80, 0.06) 0%, transparent 40%);
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  .wrap { position: relative; z-index: 2; }
+
+  /* === HEADER === */
+  header {
+    border-bottom: 1px solid var(--ink);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: var(--paper);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+    background: rgba(244, 237, 224, 0.92);
+  }
+  .masthead {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .masthead em { color: var(--ochre); font-style: italic; }
+  .header-meta {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* === HERO === */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem 4rem;
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+  }
+  .hero::before {
+    content: '№ 01';
+    position: absolute;
+    top: 2rem; right: 2rem;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.15em;
+  }
+  .kicker {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--moss);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--moss);
+  }
+  .hero h1 .ampersand {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ochre);
+    font-weight: 400;
+  }
+  .lede {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ink-soft);
+    max-width: 600px;
+    margin-bottom: 3rem;
+    line-height: 1.4;
+  }
+  .lede::first-letter { font-size: 1.6em; color: var(--ochre); }
+
+  /* === SETTINGS === */
+  .settings-bar {
+    background: var(--paper-dark);
+    border: 1px solid var(--rule);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: end;
+  }
+  .settings-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .settings-bar input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .settings-bar input:focus {
+    outline: 2px solid var(--ochre);
+    outline-offset: 2px;
+  }
+  .btn {
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .btn:hover { background: var(--moss); border-color: var(--moss); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+  }
+  .btn-secondary:hover { background: var(--ink); color: var(--paper); }
+
+  .saved-pill {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--moss);
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .saved-pill.show { opacity: 1; }
+
+  /* === NAVIGATION === */
+  nav.toc {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .toc-title {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
+  }
+  .day-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+  }
+  .day-card {
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: var(--paper);
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .day-card:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .day-card:hover .day-num { color: var(--ochre-soft); }
+  .day-card:hover .day-mark { color: var(--paper); }
+  .day-num {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-style: italic;
+    line-height: 1;
+    color: var(--ochre);
+    margin-bottom: 0.5rem;
+  }
+  .day-title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .day-mark {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .day-card.completed::after {
+    content: '✓';
+    position: absolute;
+    top: 0.8rem; right: 0.8rem;
+    font-size: 1rem;
+    color: var(--moss);
+    font-weight: 700;
+  }
+  .day-card.completed:hover::after { color: var(--ochre-soft); }
+
+  /* === CONTENT === */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .lesson {
+    display: none;
+  }
+  .lesson.active { display: block; animation: fadeIn 0.5s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .lesson-header {
+    border-top: 3px solid var(--ink);
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .lesson-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+  }
+  .lesson-meta .day-tag { color: var(--moss); }
+  .lesson h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .lesson h2 em { color: var(--moss); font-style: italic; }
+  .lesson-subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
+  }
+
+  .lesson h3 {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 3rem 0 1rem;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.5rem;
+  }
+  .lesson h3 .num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ochre);
+    margin-right: 0.6rem;
+    vertical-align: middle;
+    letter-spacing: 0.1em;
+  }
+  .lesson h4 {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2rem 0 0.7rem;
+  }
+
+  .lesson p {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.55;
+    margin-bottom: 1.2rem;
+    color: var(--ink);
+  }
+  .lesson p strong {
+    font-weight: 600;
+    color: var(--moss);
+  }
+  .lesson em { font-style: italic; }
+
+  .lesson ul, .lesson ol {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    line-height: 1.55;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .lesson li { margin-bottom: 0.5rem; }
+  .lesson ul li::marker { color: var(--ochre); }
+
+  .lesson a {
+    color: var(--moss);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .lesson a:hover { color: var(--ochre); }
+
+  /* Pull quote */
+  .pull-quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.3;
+    color: var(--moss);
+    border-left: 3px solid var(--ochre);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .pull-quote .source {
+    display: block;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-top: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Callout box */
+  .callout {
+    background: var(--paper-dark);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--moss);
+    padding: 1.2rem 1.5rem;
+    margin: 1.8rem 0;
+    font-family: var(--serif);
+    font-size: 1.05rem;
+  }
+  .callout-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--moss);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-style: normal;
+  }
+  .callout.warn { border-left-color: var(--crimson); }
+  .callout.warn .callout-label { color: var(--crimson); }
+  .callout.tip { border-left-color: var(--ochre); }
+  .callout.tip .callout-label { color: var(--ochre); }
+
+  /* Reading list */
+  .reading-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .reading-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px dotted var(--rule);
+    font-family: var(--sans);
+    font-size: 0.95rem;
+  }
+  .reading-list li::before {
+    content: '→';
+    color: var(--ochre);
+    font-weight: 700;
+  }
+  .reading-list .src {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-left: 0.4rem;
+  }
+
+  /* === ASSIGNMENT === */
+  .assignment {
+    background: linear-gradient(180deg, var(--paper-dark) 0%, var(--paper) 100%);
+    border: 2px solid var(--ink);
+    padding: 2rem;
+    margin: 3rem 0;
+    position: relative;
+  }
+  .assignment::before {
+    content: 'ЗАДАНИЕ';
+    position: absolute;
+    top: -0.7rem; left: 1.5rem;
+    background: var(--ochre);
+    color: var(--paper);
+    padding: 0.2rem 0.8rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+  }
+  .assignment h4 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+  .assignment .topic-list {
+    list-style: none;
+    counter-reset: topic;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .assignment .topic-list li {
+    counter-increment: topic;
+    padding: 0.7rem 0 0.7rem 2.5rem;
+    border-bottom: 1px dotted var(--rule);
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .assignment .topic-list li::before {
+    content: counter(topic);
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ochre);
+    border: 1px solid var(--ochre);
+    width: 1.6rem; height: 1.6rem;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+  }
+  .assignment .topic-list li:hover {
+    color: var(--moss);
+    padding-left: 2.7rem;
+  }
+  .assignment .topic-list li.selected {
+    background: rgba(184, 114, 44, 0.1);
+    color: var(--moss);
+    font-weight: 500;
+  }
+  .assignment .topic-list li.selected::before {
+    background: var(--ochre);
+    color: var(--paper);
+  }
+
+  .editor-area {
+    margin-top: 1.5rem;
+  }
+  .editor-area label {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-bottom: 0.4rem;
+  }
+  .editor-area textarea {
+    width: 100%;
+    min-height: 280px;
+    padding: 1rem;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--ink);
+    resize: vertical;
+  }
+  .editor-area textarea:focus {
+    outline: 2px solid var(--ochre);
+    outline-offset: 2px;
+  }
+  .word-count {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    margin-top: 0.4rem;
+    text-align: right;
+  }
+
+  .action-row {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* === LESSON NAV === */
+  .lesson-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--ink);
+    gap: 1rem;
+  }
+  .lesson-nav a {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid var(--ink);
+    text-decoration: none;
+    color: var(--ink);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .lesson-nav a:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .lesson-nav a.next { text-align: right; }
+  .lesson-nav .label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .lesson-nav a:hover .label { color: var(--ochre-soft); }
+  .lesson-nav .title {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-style: italic;
+  }
+
+  /* === HOME === */
+  .home-section { display: none; }
+  .home-section.active { display: block; }
+
+  .columns-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+  }
+  @media (max-width: 700px) {
+    .columns-2 { grid-template-columns: 1fr; gap: 1.5rem; }
+    .settings-bar { grid-template-columns: 1fr; }
+    header { padding: 1rem; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+    .hero { padding: 3rem 1.5rem 2rem; }
+    .hero::before { top: 1rem; right: 1rem; }
+    main { padding: 2rem 1.5rem; }
+    nav.toc { padding: 2rem 1.5rem; }
+    .lesson-nav { flex-direction: column; }
+  }
+
+  .feature-block {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--ink);
+  }
+  .feature-block .num {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ochre);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+  }
+  .feature-block h3 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+  }
+  .feature-block p {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  footer {
+    border-top: 2px solid var(--ink);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  footer .colophon {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--rule);
+    font-style: normal;
+    margin-top: 1rem;
+  }
+
+  /* === MODAL === */
+  .modal-bg {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(26, 31, 26, 0.6);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .modal-bg.show { display: flex; animation: fadeIn 0.2s; }
+  .modal {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 8px 8px 0 var(--ink);
+  }
+  .modal h3 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    padding: 0;
+  }
+  .modal p {
+    font-family: var(--serif);
+    margin-bottom: 1rem;
+  }
+  .modal .action-row { margin-top: 1.5rem; }
+
+  /* progress bar */
+  .progress-strip {
+    height: 4px;
+    background: var(--paper-dark);
+    position: sticky;
+    top: 73px;
+    z-index: 99;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--ochre), var(--moss));
+    width: 0%;
+    transition: width 0.4s ease;
+  }
+
+  /* divider ornaments */
+  .ornament {
+    text-align: center;
+    margin: 3rem 0;
+    color: var(--rule);
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    letter-spacing: 1rem;
+  }
+
+  /* === PROGRESS DASHBOARD === */
+  .progress-dashboard {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .progress-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    border: 1px solid var(--ink);
+    margin-bottom: 2rem;
+  }
+  .stat-cell {
+    padding: 1.5rem;
+    border-right: 1px solid var(--ink);
+    text-align: center;
+  }
+  .stat-cell:last-child { border-right: none; }
+  @media (max-width: 700px) {
+    .stat-cell { border-right: none; border-bottom: 1px solid var(--ink); }
+    .stat-cell:last-child { border-bottom: none; }
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-style: italic;
+    color: var(--moss);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+  }
+  .progress-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+  }
+  .progress-table th {
+    text-align: left;
+    padding: 0.7rem 1rem;
+    border-bottom: 2px solid var(--ink);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+  .progress-table td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px dotted var(--rule);
+    vertical-align: middle;
+  }
+  .status-badge {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .status-pending { color: var(--ink-soft); border-color: var(--rule); }
+  .status-draft   { color: var(--ochre); border-color: var(--ochre); background: rgba(184,114,44,0.08); }
+  .status-sent    { color: var(--moss); border-color: var(--moss); background: rgba(45,74,43,0.08); }
+
+  /* === AI CHECK MODAL === */
+  .check-result {
+    margin: 1.5rem 0;
+    padding: 1.2rem;
+    border: 1px solid var(--rule);
+    background: var(--paper-dark);
+  }
+  .check-score {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .check-score-num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-style: italic;
+    line-height: 1;
+  }
+  .check-score-label {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+  .check-bar {
+    height: 6px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .check-bar-fill {
+    height: 100%;
+    transition: width 0.6s ease;
+  }
+  .check-low    { color: var(--moss); }
+  .check-low .check-bar-fill { background: var(--moss); }
+  .check-mid    { color: var(--ochre); }
+  .check-mid .check-bar-fill { background: var(--ochre); }
+  .check-high   { color: var(--crimson); }
+  .check-high .check-bar-fill { background: var(--crimson); }
+
+  .check-flags {
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0 0;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+  }
+  .check-flags li {
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+    line-height: 1.4;
+  }
+  .check-flags li::before {
+    content: '⚑';
+    position: absolute;
+    left: 0;
+    color: var(--ochre);
+  }
+  .check-flags li.ok::before {
+    content: '✓';
+    color: var(--moss);
+  }
+  .modal.wide { max-width: 640px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<header>
+  <div class="masthead">Литература <em>·</em> 14 дней</div>
+  <div class="header-meta">Курс № 01 · 9 класс · Бишкек</div>
+</header>
+
+<div class="progress-strip"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- HOME PAGE -->
+<div id="home" class="home-section active">
+
+  <section class="hero">
+    <div class="kicker">— Подготовка к экзамену · самообучение —</div>
+    <h1>Как писать <em>сочинения</em><br><span class="ampersand">&</span> эссе<br>за 14 дней.</h1>
+    <p class="lede">Курс из шести уроков с теорией, образцами разбора, ссылками для углубления и заданиями. Каждое задание сын пишет прямо здесь, копирует текст в письмо и отправляет родителю. Прогресс сохраняется в браузере.</p>
+
+    <div class="settings-bar">
+      <div>
+        <label class="settings-label" for="parentEmail">Email родителя для отправки работ</label>
+        <input type="email" id="parentEmail" placeholder="parent@example.com" value="aatamanoff@gmail.com">
+        <span class="saved-pill" id="emailSaved">✓ сохранено</span>
+      </div>
+      <button class="btn" onclick="saveEmail()">Сохранить</button>
+    </div>
+  </section>
+
+  <section class="progress-dashboard" id="progressDashboard">
+    <div class="toc-title">— Мой прогресс —</div>
+    <div class="progress-stats" id="progressStats"></div>
+    <table class="progress-table">
+      <thead>
+        <tr>
+          <th style="width:40px;">№</th>
+          <th>Урок</th>
+          <th>Дни</th>
+          <th>Статус</th>
+          <th style="width:80px;"></th>
+        </tr>
+      </thead>
+      <tbody id="progressTbody"></tbody>
+    </table>
+  </section>
+
+  <nav class="toc">
+    <div class="toc-title">— Программа курса —</div>
+    <div class="day-grid" id="dayGrid"></div>
+  </nav>
+
+  <main>
+    <div class="ornament">❦ ❦ ❦</div>
+
+    <h2 style="font-family: var(--serif); font-size: 2.5rem; font-weight: 500; margin-bottom: 2rem;">Как устроен курс</h2>
+
+    <div class="feature-block">
+      <div class="num">01 / ШЕСТЬ УРОКОВ</div>
+      <h3>По 2–3 дня на блок</h3>
+      <p>Урок открывается, читается за один-два захода. Между уроками — день на чтение текста и обдумывание задания.</p>
+    </div>
+
+    <div class="feature-block">
+      <div class="num">02 / ТЕОРИЯ + ПРИМЕР + ЗАДАНИЕ</div>
+      <h3>Каждый урок строится одинаково</h3>
+      <p>Сначала — короткая теория с опорой на серьёзных литературоведов (Лотман, Бахтин, Борхес). Потом — разбор образца. В конце — список тем на выбор и поле для написания.</p>
+    </div>
+
+    <div class="feature-block">
+      <div class="num">03 / ОТПРАВКА РАБОТ</div>
+      <h3>Кнопка «Отправить родителю»</h3>
+      <p>Откроет почтовый клиент с готовым письмом: тема, текст и подпись подставляются автоматически. Прогресс и черновики хранятся в браузере — закрыл, открыл, продолжил.</p>
+    </div>
+
+    <div class="ornament">❦</div>
+
+    <h2 style="font-family: var(--serif); font-size: 2.5rem; font-weight: 500; margin-bottom: 1.5rem;">Что будем читать</h2>
+
+    <p style="font-family: var(--serif); font-size: 1.15rem; line-height: 1.55; margin-bottom: 1rem;">Шесть произведений из программы 9 класса плюс два современных рассказа — для расширения языка и связи школьной классики с актуальной литературой.</p>
+
+    <ul class="reading-list">
+      <li><div><strong>А. И. Солженицын.</strong> «Матрёнин двор» (1959) <span class="src">программа · рассказ ~30 стр.</span></div></li>
+      <li><div><strong>А. С. Грибоедов.</strong> «Горе от ума» <span class="src">программа</span></div></li>
+      <li><div><strong>А. С. Пушкин.</strong> «Евгений Онегин» — фрагменты <span class="src">программа</span></div></li>
+      <li><div><strong>М. Ю. Лермонтов.</strong> «Герой нашего времени» — главы «Тамань», «Княжна Мери» <span class="src">программа</span></div></li>
+      <li><div><strong>Н. В. Гоголь.</strong> «Мёртвые души» — фрагменты <span class="src">программа</span></div></li>
+      <li><div><strong>Ф. М. Достоевский.</strong> «Белые ночи» <span class="src">программа</span></div></li>
+      <li><div><strong>Тед Чан.</strong> «История твоей жизни» (2000) <span class="src">бонус · современная проза</span></div></li>
+      <li><div><strong>Виктор Пелевин.</strong> «Затворник и Шестипалый» (1990) <span class="src">бонус · философская притча</span></div></li>
+    </ul>
+
+    <p style="font-family: var(--serif); font-size: 1.05rem; color: var(--ink-soft); font-style: italic; margin-top: 2rem;">Все тексты доступны бесплатно — прямые ссылки даны внутри уроков. «Полка», «Арзамас», lib.ru, Викитека.</p>
+
+    <div class="ornament">❦ ❦ ❦</div>
+
+    <div style="text-align: center; margin: 3rem 0;">
+      <button class="btn" onclick="goToDay(1)" style="font-size: 0.9rem; padding: 1rem 2rem;">→ Начать с урока 1</button>
+    </div>
+  </main>
+</div>
+
+<!-- LESSONS CONTAINER -->
+<main id="lessons" style="display:none;"></main>
+
+<footer>
+  <p>Курс собран как личный проект. Хорошей работы.</p>
+  <div class="colophon">Cormorant Garamond · JetBrains Mono · Inter</div>
+</footer>
+
+</div>
+
+<!-- MODAL: подтверждение отправки -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <h3 id="modalTitle">Отправить работу?</h3>
+    <p id="modalText"></p>
+    <div class="action-row">
+      <button class="btn" id="modalConfirm">Да, открыть почту</button>
+      <button class="btn btn-secondary" onclick="closeModal()">Отмена</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============ DATA ============
+const lessons = [
+  {
+    id: 1,
+    days: 'Дни 1–2',
+    title: 'Сочинение <em>и</em> эссе: в чём разница',
+    subtitle: 'Что такое формат, и почему его нельзя путать',
+    work: 'Знакомство с форматами',
+    content: `
+<h3><span class="num">§ 1</span>Два разных жанра</h3>
+<p><strong>Школьное сочинение</strong> — это аналитическая работа по литературному произведению. Ученик показывает, что прочитал текст, понял его, умеет работать с цитатами и литературоведческими понятиями (тема, идея, образ, композиция). Структура жёсткая: <em>вступление → тезис → аргументы из текста → вывод</em>. Личное мнение возможно, но всегда подкреплено текстом.</p>
+
+<p><strong>Эссе</strong> (от франц. <em>essai</em> — «попытка») — свободное размышление автора над проблемой. Жанр придумал Мишель Монтень в 1580 году, выпустив книгу «Опыты». Здесь главное — мысль самого пишущего, его рассуждение, парадокс, неожиданный ракурс. Эссе допускает ассоциации, личный опыт, отступления. Литературное произведение в эссе может быть лишь <em>поводом</em> для размышления, а не главным предметом анализа.</p>
+
+<div class="pull-quote">
+  Сочинение — это разговор о книге. Эссе — это разговор о жизни через книгу.
+  <span class="source">Простая аналогия для запоминания</span>
+</div>
+
+<h3><span class="num">§ 2</span>Структура сочинения · 5 частей</h3>
+<ol>
+  <li><strong>Вступление</strong> (10–15% объёма) — подвести к теме. Можно начать с исторического контекста, цитаты, риторического вопроса или биографического факта.</li>
+  <li><strong>Тезис</strong> — главная мысль, которую будет доказывать сочинение. Одно-два предложения, в которых сформулирован ответ на вопрос темы.</li>
+  <li><strong>Аргументация</strong> (60–70%) — 2–3 аргумента из текста с цитатами и их разбором. Каждый строится по схеме <em>«утверждение → цитата → комментарий»</em>.</li>
+  <li><strong>Контраргумент или альтернативный взгляд</strong> (необязательно, но повышает оценку) — показывает глубину мышления.</li>
+  <li><strong>Заключение</strong> (10–15%) — возврат к тезису на новом уровне, обобщение, выход на «вечную» тему.</li>
+</ol>
+
+<div class="callout tip">
+  <span class="callout-label">Главное правило</span>
+  Вступление и заключение должны «рифмоваться» — то, что обещано во вступлении, должно прозвучать в выводе.
+</div>
+
+<h3><span class="num">§ 3</span>Чек-лист анализа произведения</h3>
+<p>Когда читаешь текст, делай пометки по этим уровням:</p>
+<ul>
+  <li><strong>Тема</strong> — о чём произведение (любовь, война, судьба «маленького человека»).</li>
+  <li><strong>Проблема</strong> — какой вопрос ставит автор.</li>
+  <li><strong>Идея</strong> — что автор хочет сказать, его ответ на проблему.</li>
+  <li><strong>Сюжет и композиция</strong> — как построен текст, есть ли пролог, кольцевая композиция, ретроспекция.</li>
+  <li><strong>Система образов</strong> — главные / второстепенные герои, антагонисты, двойники.</li>
+  <li><strong>Художественные средства</strong> — метафоры, эпитеты, символы, говорящие фамилии.</li>
+  <li><strong>Контекст</strong> — историческая эпоха, литературное направление.</li>
+  <li><strong>Авторская позиция</strong> — как автор относится к героям.</li>
+</ul>
+
+<h3><span class="num">§ 4</span>«Вечные темы»: теоретическая опора</h3>
+<p>Чтобы сочинения и эссе были глубокими, полезно знать о концепции «вечных сюжетов» — историй, которые повторяются в мировой литературе.</p>
+
+<h4>Хорхе Луис Борхес. Эссе «Четыре цикла» (1972)</h4>
+<p>Аргентинский писатель утверждал, что все истории мира сводятся к четырём:</p>
+<ul>
+  <li><em>Об осаждённом городе</em> — герои защищают обречённое место (Троя, «Тарас Бульба»).</li>
+  <li><em>О возвращении</em> — герой странствует и возвращается домой (Одиссей, отчасти Чацкий).</li>
+  <li><em>О поиске</em> — герой ищет нечто (Грааль, истину, смысл — Печорин ищет себя).</li>
+  <li><em>О жертве бога</em> — герой жертвует собой ради других.</li>
+</ul>
+
+<h4>Юрий Лотман. Бинарные оппозиции</h4>
+<p>Российский литературовед выделял в русской литературе ключевые противопоставления: <em>«свой / чужой»</em>, <em>«дом / антидом»</em>, <em>«путь / бездорожье»</em>. В «Евгении Онегине» Татьяна — воплощение «дома», а Онегин — «бездорожья».</p>
+
+<h4>Михаил Бахтин. Хронотоп</h4>
+<p>Понятие <em>хронотоп</em> — единство времени и места в тексте. В «Мёртвых душах» хронотоп дороги структурирует весь сюжет.</p>
+
+<div class="callout">
+  <span class="callout-label">Как использовать в эссе</span>
+  Достаточно одной фразы: «Печорин у Лермонтова реализует борхесовский сюжет поиска — но поиска без цели, что и делает его „героем своего времени“».
+</div>
+
+<h3><span class="num">§ 5</span>Тезис: сердце любой работы</h3>
+<p>Самое слабое место школьных сочинений — отсутствие тезиса. Ученик пишет «о Чацком» вместо того, чтобы доказывать конкретное утверждение о Чацком. Тезис — это <strong>спорное предложение</strong>, которое можно подтвердить или опровергнуть. Если фраза очевидна — это не тезис, это констатация.</p>
+
+<h4>Плохие тезисы (на самом деле — не тезисы):</h4>
+<ul>
+  <li>«Чацкий — главный герой комедии Грибоедова». <span style="color:var(--crimson);">← это факт, а не утверждение.</span></li>
+  <li>«В произведении поднимаются важные темы». <span style="color:var(--crimson);">← общая фраза, ни к чему не обязывает.</span></li>
+  <li>«Татьяна — положительный персонаж». <span style="color:var(--crimson);">← оценка без объяснения.</span></li>
+</ul>
+
+<h4>Сильные тезисы:</h4>
+<ul>
+  <li>«Чацкий проигрывает не потому, что слаб, а потому, что говорит правду в обществе, где правда никому не нужна».</li>
+  <li>«Татьяна отказывает Онегину в финале не из верности мужу, а из верности самой себе — той девушке, что писала ему письмо».</li>
+  <li>«Чичиков — первый русский литературный герой, у которого нет внутреннего конфликта, и именно поэтому он страшнее Печорина».</li>
+</ul>
+
+<p>Видна разница? Сильный тезис всегда содержит <strong>«но»</strong> или <strong>«не потому что..., а потому что...»</strong>. Он переворачивает очевидное.</p>
+
+<div class="callout tip">
+  <span class="callout-label">Простой тест</span>
+  Можно ли с твоим тезисом не согласиться? Если нет — это не тезис. Хороший тезис всегда вызывает желание возразить. Это нормально: ты будешь возражать самому себе во время аргументации.
+</div>
+
+<h3><span class="num">§ 6</span>Аргументация: формула PEEL</h3>
+<p>В английских школах учат структуре <strong>PEEL</strong> — это удобный шаблон для каждого абзаца аргументации.</p>
+
+<table style="width:100%; font-family: var(--serif); font-size: 1.05rem; border-collapse: collapse; margin: 1.5rem 0;">
+  <tr style="border-bottom: 1px solid var(--ink);">
+    <th style="text-align: left; padding: 0.7rem; border-right: 1px solid var(--rule); width: 70px;">Буква</th>
+    <th style="text-align: left; padding: 0.7rem;">Что значит</th>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.7rem; border-right: 1px solid var(--rule);"><strong>P</strong>oint</td>
+    <td style="padding: 0.7rem;">Утверждение абзаца. Одно предложение, что ты сейчас докажешь.</td>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.7rem; border-right: 1px solid var(--rule);"><strong>E</strong>vidence</td>
+    <td style="padding: 0.7rem;">Доказательство — цитата или сцена из текста.</td>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.7rem; border-right: 1px solid var(--rule);"><strong>E</strong>xplain</td>
+    <td style="padding: 0.7rem;">Объяснение: почему эта цитата доказывает твоё утверждение?</td>
+  </tr>
+  <tr>
+    <td style="padding: 0.7rem; border-right: 1px solid var(--rule);"><strong>L</strong>ink</td>
+    <td style="padding: 0.7rem;">Связь с общим тезисом работы — возврат к главной идее.</td>
+  </tr>
+</table>
+
+<h4>Как это выглядит в реальном абзаце:</h4>
+<div style="background: var(--paper-dark); padding: 1.2rem; border-left: 3px solid var(--moss); font-family: var(--serif); font-size: 1.05rem; line-height: 1.55;">
+<strong style="color: var(--moss);">[P]</strong> Чацкий проигрывает не потому, что неправ, а потому, что говорит правду публично. <strong style="color: var(--moss);">[E]</strong> В монологе «А судьи кто?» он перечисляет грехи общества: «Где, укажите нам, отечества отцы, / Которых мы должны принять за образцы?» <strong style="color: var(--moss);">[E]</strong> Этот вопрос риторический — Чацкий не ждёт ответа, он обвиняет. Но обвинять при тех, кого обвиняешь, — самоубийство. Гости Фамусова не оскорбятся идеями, они оскорбятся самим фактом, что их вслух осудили. <strong style="color: var(--moss);">[L]</strong> Так слух о безумии Чацкого — это не наказание за идеи, а защита общества от того, кто нарушил негласный договор: «думай что хочешь, но молчи».
+</div>
+
+<p>Заметь: цитата вписана в синтаксис самого предложения, не висит отдельной строкой. Это правильный способ работы с цитатой в сочинении.</p>
+
+<h3><span class="num">§ 7</span>Образцы вступлений: 4 проверенных приёма</h3>
+
+<h4>1. От исторического контекста</h4>
+<p style="background: var(--paper-dark); padding: 1rem; font-size: 1rem; border-left: 3px solid var(--ochre);"><em>«Грибоедов закончил „Горе от ума“ в 1824 году — за полтора года до восстания декабристов. Чацкий ещё не знает, чем закончатся попытки переделать Россию словом, но автор уже знает. Эта тень будущего лежит на каждом монологе героя…»</em></p>
+
+<h4>2. От парадокса</h4>
+<p style="background: var(--paper-dark); padding: 1rem; font-size: 1rem; border-left: 3px solid var(--ochre);"><em>«Странно: единственный умный человек в комедии под названием „Горе от ума“ оказывается сумасшедшим. Грибоедов словно намекает: ум в этом мире — диагноз, а не достоинство…»</em></p>
+
+<h4>3. От цитаты</h4>
+<p style="background: var(--paper-dark); padding: 1rem; font-size: 1rem; border-left: 3px solid var(--ochre);"><em>«„Служить бы рад, прислуживаться тошно“ — эту фразу Чацкого помнят все. Но мало кто замечает, что её произносит человек, который сам уже отслужил и ушёл. Чацкий не молодой идеалист, он бывший практик…»</em></p>
+
+<h4>4. От личного наблюдения (для эссе)</h4>
+<p style="background: var(--paper-dark); padding: 1rem; font-size: 1rem; border-left: 3px solid var(--ochre);"><em>«В нашем классе есть один Чацкий. Он не ходит на дни рождения одноклассников, считает их пустыми, говорит правду, никто его не любит. Я долго думал, что он просто высокомерный. Пока не перечитал Грибоедова…»</em></p>
+
+<p>Чего <strong>не нужно</strong> в начале: фраз вроде «А. С. Грибоедов — великий русский писатель XIX века». Это пустая строка, она ничего не доказывает и сразу делает текст похожим на школьный реферат.</p>
+
+<h3><span class="num">§ 8</span>Образцы заключений: вернуться, но выше</h3>
+<p>Хорошее заключение делает три вещи: возвращает к тезису, обобщает аргументы и выводит мысль на новый уровень — связывает текст с современностью, с другой эпохой или с человеческой жизнью вообще.</p>
+
+<h4>Слабое заключение:</h4>
+<p style="background: var(--paper-dark); padding: 1rem; font-size: 1rem; border-left: 3px solid var(--crimson);"><em>«Таким образом, в комедии Грибоедова „Горе от ума“ поднимаются важные темы. Произведение актуально и сегодня. Чацкий — герой, который противостоит обществу. Это великое произведение русской литературы, которое нужно читать всем».</em></p>
+
+<h4>Сильное заключение:</h4>
+<p style="background: var(--paper-dark); padding: 1rem; font-size: 1rem; border-left: 3px solid var(--moss);"><em>«Чацкий проиграл потому, что был один. Но его поражение Грибоедов превратил в победу — пьеса стала зеркалом, в которое каждое следующее поколение русских читателей видит своё фамусовское общество. И, кажется, своего Чацкого тоже».</em></p>
+
+<p>Заметь: сильное заключение возвращает фразу из тезиса («один» — было, «проиграл» — было), но добавляет новый поворот: парадокс «поражение = победа». Это и есть «вернуться, но выше».</p>
+
+<h3><span class="num">§ 9</span>Семь типичных ошибок школьных сочинений</h3>
+<ol>
+  <li><strong>Пересказ вместо анализа</strong>. «Чацкий приехал к Софье. Софья его не любила. Он встретил Молчалина…» — это не сочинение, это краткое содержание.</li>
+  <li><strong>Слова без подтверждения</strong>. «Татьяна — глубокая натура» — а почему? Каждое утверждение должно опираться на текст.</li>
+  <li><strong>«Автор хотел сказать»</strong>. Никто не знает, что хотел сказать автор. Пиши «в романе показано», «текст утверждает», «образ Татьяны воплощает».</li>
+  <li><strong>Огромные цитаты</strong>. Цитата — это аргумент, а не самоцель. Идеальная цитата — 1–2 строки. Длинные нужны очень редко.</li>
+  <li><strong>Цитата без разбора</strong>. После цитаты обязательно нужен комментарий: <em>почему</em> эта цитата доказывает твою мысль.</li>
+  <li><strong>Безличный язык</strong>. «Автору удалось мастерски передать», «произведение позволяет нам понять» — это штампы. Лучше живая фраза.</li>
+  <li><strong>Заключение = повторение вступления</strong>. Если в выводе ты говоришь то же самое, что во вступлении, — ты ничего не доказал.</li>
+</ol>
+
+<h3><span class="num">§ 10</span>Образец: сочинение vs эссе на одну тему</h3>
+<p><strong>Тема: «Дружба в жизни человека»</strong></p>
+
+<h4>Так начнётся сочинение:</h4>
+<p style="background: var(--paper-dark); padding: 1rem; font-size: 1rem; border-left: 3px solid var(--moss);"><em>«Тема дружбы — одна из центральных в романе Пушкина „Евгений Онегин“. Автор показывает разные типы человеческих связей: дружбу-приятельство Онегина с Ленским, духовную близость Татьяны и её няни, связь поэта с читателем. Особенно трагично раскрывается мотив дружбы в шестой главе, когда…»</em></p>
+
+<h4>Так начнётся эссе:</h4>
+<p style="background: var(--paper-dark); padding: 1rem; font-size: 1rem; border-left: 3px solid var(--ochre);"><em>«В пятнадцать лет я думал, что друг — тот, с кем не скучно. В семнадцать — тот, кто не предаст. Сейчас я подозреваю, что настоящий друг — тот, рядом с кем ты сам становишься лучше. И всё-таки чаще всего мы дружим не с людьми, а со своим представлением о них…»</em></p>
+
+<p>Видна разница? Сочинение сразу заявляет произведение и автора. Эссе начинается с личной мысли — текст войдёт позже как иллюстрация.</p>
+
+<h3><span class="num">§ 11</span>Тренировка на коротком тексте: «Матрёнин двор»</h3>
+<p>Прежде чем писать первую работу, прочитай рассказ Александра Солженицына <strong>«Матрёнин двор»</strong> (1959). Это около 30 страниц — самый компактный текст всего курса. Текст: <a href="https://ilibrary.ru/text/1574/p.1/index.html" target="_blank" rel="noopener">ilibrary.ru</a>.</p>
+
+<p>Рассказ хорош тем, что на нём удобно отрабатывать <strong>чек-лист анализа</strong> из § 3. Попробуй сам ответить на эти вопросы по ходу чтения:</p>
+<ul>
+  <li><strong>Тема</strong> — о чём этот рассказ? (Подсказка: не о Матрёне как таковой, а о чём-то большем.)</li>
+  <li><strong>Образ рассказчика</strong> — кто его ведёт? Это Игнатич, учитель, бывший заключённый. Зачем Солженицын делает рассказчика именно таким?</li>
+  <li><strong>Финальная фраза</strong> — «Все мы жили рядом с ней и не поняли, что есть она тот самый праведник, без которого, по пословице, не стоит село. Ни город. Ни вся земля наша». Это и есть тезис. Всё в рассказе ведёт к нему.</li>
+  <li><strong>Композиция</strong> — рассказ открывается тем, что поезда замедляют ход в одном месте. Зачем это? И при чём тут смерть Матрёны?</li>
+</ul>
+
+<div class="callout tip">
+  <span class="callout-label">Связь с теорией</span>
+  Матрёна — пример того, что Лотман называл <em>«домом»</em> в русской литературе. Она — точка укоренённости, как Татьяна Ларина. Все вокруг неё — «бездорожье». Это очень важная связь, мы вернёмся к ней в Уроке 3.
+</div>
+
+<h3><span class="num">§ 12</span>Куда углубиться</h3>
+<ul class="reading-list">
+  <li><div><a href="https://polka.academy/articles" target="_blank" rel="noopener">«Полка»</a> — статьи о русской классике, написанные современными филологами <span class="src">основной ресурс курса</span></div></li>
+  <li><div><a href="https://arzamas.academy" target="_blank" rel="noopener">«Арзамас»</a> — лекции по литературе, многие в открытом доступе <span class="src">очень рекомендую</span></div></li>
+  <li><div><a href="https://imwerden.de/pdf/likhachev_pisma_o_dobrom_i_prekrasnom_2006_text.pdf" target="_blank" rel="noopener">Лихачёв Д. С. «Письма о добром и прекрасном»</a> — короткие эссе академика, образец того, как писать <span class="src">PDF целиком</span></div></li>
+  <li><div><a href="http://feb-web.ru/feb/lotman/critics/lro/lro-001-.htm" target="_blank" rel="noopener">Лотман Ю. М. «Беседы о русской культуре»</a> — мост от школьной программы к настоящему литературоведению <span class="src">feb-web.ru</span></div></li>
+  <li><div><a href="https://www.youtube.com/@armenifedor" target="_blank" rel="noopener">YouTube: «Армен и Фёдор»</a> — литературный подкаст, разборы классики на хорошем уровне <span class="src">видео / подкаст</span></div></li>
+</ul>
+    `,
+    topics: [
+      'Что для меня значит хорошая книга',
+      'Зачем читать классику в эпоху TikTok',
+      'Когда последний раз книга меня изменила',
+      '«Матрёнин двор»: почему рассказчик всех вокруг считает «не понявшими»?',
+      'Праведник в современном мире: возможна ли Матрёна сегодня?',
+      'Что я бы сказал Матрёне, если бы мог встретить её'
+    ],
+    assignmentText: 'Напиши <strong>короткое эссе или сочинение на 250–350 слов</strong> на одну из тем. Первые три темы — для эссе (свободно, от себя). Темы 4–6 — связаны с рассказом «Матрёнин двор», прочитай его сначала. Если выберешь тему по Солженицыну — это уже сочинение, нужна одна цитата из текста и тезис. Главное — собственный голос и понятная структура.'
+  },
+
+  {
+    id: 2,
+    days: 'Дни 3–5',
+    title: 'Грибоедов. <em>Горе от ума</em>',
+    subtitle: 'Как анализировать драму и работать с цитатой',
+    work: 'Сочинение по комедии',
+    content: `
+<h3><span class="num">§ 1</span>Чем драма отличается от прозы</h3>
+<p>В драме нет автора-рассказчика. Всё, что мы знаем о героях, мы узнаём из их собственных слов и из ремарок. Это значит, что <strong>любая реплика — двойная</strong>: она характеризует и того, кто говорит, и того, о ком говорят.</p>
+<p>Когда Фамусов говорит про Чацкого «Опасный человек!» — это нам говорит больше о Фамусове, чем о Чацком.</p>
+
+<h3><span class="num">§ 2</span>Говорящие фамилии</h3>
+<p>Грибоедов наследует традицию классицизма (Фонвизин, «Недоросль»):</p>
+<ul>
+  <li><strong>Фамусов</strong> — от лат. <em>fama</em> «молва». Человек, для которого важнее всего «что станет говорить княгиня Марья Алексевна».</li>
+  <li><strong>Молчалин</strong> — говорит за него фамилия. Его жизненная программа: «умеренность и аккуратность».</li>
+  <li><strong>Скалозуб</strong> — солдафон, скалит зубы.</li>
+  <li><strong>Тугоуховский</strong> — глух (буквально и символически).</li>
+  <li><strong>Чацкий</strong> — здесь сложнее. Грибоедов первоначально звал его <em>Чадский</em> (от «чад», угар) — герой, опьянённый идеями, оказавшийся «не в своей тарелке».</li>
+</ul>
+
+<h3><span class="num">§ 3</span>Два конфликта в пьесе</h3>
+<p>В «Горе от ума» одновременно развиваются два конфликта:</p>
+<ol>
+  <li><strong>Любовный</strong>: Чацкий — Софья — Молчалин (треугольник).</li>
+  <li><strong>Общественный</strong>: Чацкий vs «фамусовское общество».</li>
+</ol>
+<p>Гениальность Грибоедова в том, что эти конфликты сплетены: Чацкий проигрывает в обоих сразу, и проигрыш в одном вызывает поражение в другом. Слух о его «безумии» запускает Софья — из ревности.</p>
+
+<h3><span class="num">§ 4</span>Образец разбора монолога</h3>
+<p>Возьмём знаменитый монолог Чацкого «А судьи кто?..» (действие 2, явление 5).</p>
+
+<div class="pull-quote">
+  А судьи кто? — За древностию лет<br>
+  К свободной жизни их вражда непримирима…
+  <span class="source">Чацкий, действие II</span>
+</div>
+
+<p><strong>Что здесь делает Чацкий?</strong></p>
+<ul>
+  <li>Открывает риторическим вопросом — приём классической ораторской речи.</li>
+  <li>Атакует «судей» — тех, кто берёт на себя право судить новое поколение.</li>
+  <li>Использует анафору («Где, укажите нам…») — повтор начала фраз для эмоционального нагнетания.</li>
+  <li>Заканчивает прямым обвинением — переходит от вопроса к приговору.</li>
+</ul>
+
+<p><strong>Это и есть модель сочинения</strong>: тезис → ряд аргументов → вывод-приговор. Чацкий говорит как готовое сочинение.</p>
+
+<h3><span class="num">§ 5</span>«Горе от ума»: формула пьесы</h3>
+<p>Гончаров в статье «Мильон терзаний» (1872) дал формулу: <em>Чацкий не побеждён фамусовским обществом — он его раскрывает</em>. Пьеса заканчивается тем, что Фамусов в ужасе: «Ах! Боже мой! что станет говорить княгиня Марья Алексевна!» — последняя фраза комедии, и она <strong>не о Чацком, а о княгине</strong>. Это и есть приговор обществу, поставленный самим обществом.</p>
+
+<h3><span class="num">§ 6</span>Язык, разошедшийся на афоризмы</h3>
+<p>Пушкин писал о «Горе от ума»: «Половина — войдёт в пословицу». Так и случилось. Грибоедов написал пьесу таким разговорным, живым стихом, что фразы оторвались от контекста и стали частью русского языка.</p>
+
+<p><strong>Афоризмы Чацкого</strong> — острые, парадоксальные, направленные вовне:</p>
+<ul>
+  <li>«Служить бы рад, прислуживаться тошно».</li>
+  <li>«А судьи кто?»</li>
+  <li>«Свежо предание, а верится с трудом».</li>
+  <li>«Дома новы, но предрассудки стары».</li>
+  <li>«Молчалины блаженствуют на свете».</li>
+</ul>
+
+<p><strong>Афоризмы Фамусова</strong> — практичные, обыденные, защитные:</p>
+<ul>
+  <li>«Что станет говорить княгиня Марья Алексевна!»</li>
+  <li>«Подписано, так с плеч долой».</li>
+  <li>«Ну как не порадеть родному человечку!»</li>
+</ul>
+
+<p>Важно заметить: <strong>речевая характеристика — главный инструмент Грибоедова</strong>. У каждого героя свой язык. Скалозуб говорит по-военному отрывисто. Молчалин — короткими, осторожными фразами. Фамусов — длинно, с прибаутками. Чацкий — стремительно, монологами на четверть страницы. По одной реплике из пьесы можно угадать, чья она.</p>
+
+<div class="callout tip">
+  <span class="callout-label">Это даёт сильный приём для сочинения</span>
+  Можно построить целый абзац вокруг одной фразы и показать, как через речь героя раскрывается его сущность. Например: «„Подписано, так с плеч долой“ — в этой короткой реплике Фамусов выдаёт всю свою философию. Государственная служба для него — не дело, а ритуал избавления от ответственности».
+</div>
+
+<h3><span class="num">§ 7</span>Софья — самая сложная роль пьесы</h3>
+<p>В школе часто упрощают: Софья — пустая девушка, влюбившаяся в подлого Молчалина. Но это поверхностное чтение. На самом деле Софья — <strong>единственный женский характер в пьесе, и она сама запускает её катастрофу</strong>.</p>
+
+<p>Ключевая фраза о Софье — её собственная: <em>«Счастливые часов не наблюдают»</em>. Это про любовь, но и про незрячесть: она настолько уверена в своём чувстве, что не видит ничего вокруг. Когда Чацкий пытается с ней спорить, она запускает слух о его безумии — не из мести, а из самообороны. Чацкий угрожает её картине мира.</p>
+
+<p>В финале именно Софья прозревает первой — раньше, чем Чацкий. Она видит сцену между Молчалиным и Лизой и понимает, что обманывалась. Грибоедов даёт ей трагический момент пробуждения, которого не получит ни один другой персонаж пьесы. Чацкий уезжает, ничего не поняв; Софья остаётся — и понимает всё.</p>
+
+<p><strong>Это важный приём анализа</strong>: ищи в тексте героев, чьи изменения видны, а не только чьи позиции заявлены. У Грибоедова меняется только Софья. Все остальные — статичны.</p>
+
+<h3><span class="num">§ 8</span>Образец сочинения целиком (фрагмент)</h3>
+<p>Тема: <em>«Кому в комедии Грибоедова на самом деле „горе“?»</em></p>
+
+<div style="background: var(--paper-dark); padding: 1.5rem; border-left: 3px solid var(--moss); font-family: var(--serif); font-size: 1.05rem; line-height: 1.6;">
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Вступление]</strong> Название пьесы Грибоедова — обещание парадокса. «Горе от ума» — значит, ум приносит горе. Но кому именно? Привычный школьный ответ — Чацкому. Однако внимательное чтение показывает: горе в комедии достаётся не одному, а трём героям, и причины у них разные.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Тезис]</strong> Чацкому горе приносит ум, потому что он говорит. Софье — потому что она верит. Фамусову — потому что общество, в котором он жил, начинает трескаться. Все трое страдают от ума — но от разного.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Аргумент о Чацком]</strong> Самое явное горе — у Чацкого. Он приезжает в Москву после долгой отлучки и не узнаёт мир, в котором вырос. «Дома новы, но предрассудки стары», — констатирует он. Каждый его монолог — попытка изменить услышавших. Но в этом и его слепота: он не понимает, что в фамусовском обществе нельзя изменить сознание словом, потому что слова здесь не имеют веса. Когда Софья говорит, что он сошёл с ума, общество принимает это с готовностью — оно ждало повода списать чужака. Горе Чацкого в том, что он ошибся в инструменте: умом нельзя пробить стену, которую держит не разум, а привычка.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Аргумент о Софье]</strong> Горе Софьи тоньше и страшнее. Она не противостоит обществу — она его дочь. Но её ум, начитанность французскими романами, заставляет её увидеть в Молчалине героя там, где есть только тихий карьерист. Финальная сцена, где она застаёт Молчалина с Лизой, — это её момент прозрения. Грибоедов даёт ей единственное настоящее изменение во всей пьесе. Чацкий уезжает, никем не понятый и сам ничего не поняв. Софья остаётся — и понимает всё, что только что произошло. Её горе — это горе того, кто ошибся в человеке.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Аргумент о Фамусове]</strong> Меньше всего о Фамусове думают как о страдающем. Но последняя фраза пьесы — его. «Ах! Боже мой! что станет говорить княгиня Марья Алексевна!» Это вопль человека, для которого скандал — конец мира. Его горе — самое мелкое из трёх, но самое показательное: общество, где главная катастрофа — пересуды соседки, обречено. Фамусов ещё не знает, что он живёт накануне декабря 1825 года. Грибоедов знает. И в этом знании — авторский приговор.</p>
+
+<p><strong style="color: var(--moss);">[Заключение]</strong> «Горе от ума» — комедия, в которой никто не смеётся в финале. Чацкий уезжает, Софья прозревает, Фамусов в ужасе. Грибоедов написал не пьесу о столкновении прогрессивного героя с реакцией — он написал пьесу о том, что ум всегда опасен. Он опасен для того, кто его носит, для того, на кого он направлен, и для общества, в котором он появился. Через сто лет Гончаров увидел в этом универсальную формулу — и был прав.</p>
+</div>
+
+<p style="margin-top: 1rem; font-family: var(--serif); font-size: 1rem; color: var(--ink-soft); font-style: italic;">~ 380 слов. Обрати внимание: тезис заявляет неожиданный поворот (горе у трёх, а не у одного), аргументы построены параллельно (по одному абзацу на каждого), заключение возвращает к тезису через обобщение.</p>
+
+<h3><span class="num">§ 9</span>Как строить сочинение по «Горю от ума»</h3>
+<div class="callout tip">
+  <span class="callout-label">Шаблон работы (350–400 слов)</span>
+  <strong>Вступление</strong> (3–4 предложения): историко-литературный контекст. «Горе от ума» написано в 1825 г., накануне восстания декабристов. Грибоедов соединяет классицизм и романтизм…<br><br>
+  <strong>Тезис</strong> (1–2 предложения): прямой ответ на вопрос темы.<br><br>
+  <strong>Аргумент 1</strong> (5–7 предложений): первая опора + цитата + разбор цитаты.<br><br>
+  <strong>Аргумент 2</strong> (5–7 предложений): вторая опора + цитата.<br><br>
+  <strong>Аргумент 3 / контраргумент</strong> (5–6 предложений): альтернативный взгляд.<br><br>
+  <strong>Заключение</strong> (3–4 предложения): возврат к тезису + связь с современностью.
+</div>
+
+<h3><span class="num">§ 10</span>Куда углубиться</h3>
+<ul class="reading-list">
+  <li><div><a href="https://polka.academy/articles/517" target="_blank" rel="noopener">«Полка»: статья о «Горе от ума»</a> — лучший разбор для 9 класса <span class="src">читать обязательно</span></div></li>
+  <li><div><a href="https://ilibrary.ru/text/5/index.html" target="_blank" rel="noopener">Текст комедии целиком</a> — на ilibrary.ru <span class="src">читать онлайн</span></div></li>
+  <li><div><a href="http://az.lib.ru/g/goncharow_i_a/text_0040.shtml" target="_blank" rel="noopener">Гончаров И. А. «Мильон терзаний»</a> — классическая критическая статья 1872 г. <span class="src">15 страниц</span></div></li>
+  <li><div><a href="https://www.youtube.com/results?search_query=%D0%B0%D1%80%D0%BC%D0%B5%D0%BD+%D0%B8+%D1%84%D1%91%D0%B4%D0%BE%D1%80+%D0%B3%D0%BE%D1%80%D0%B5+%D0%BE%D1%82+%D1%83%D0%BC%D0%B0" target="_blank" rel="noopener">«Армен и Фёдор» о «Горе от ума»</a> <span class="src">видео</span></div></li>
+</ul>
+    `,
+    topics: [
+      'Кому в комедии Грибоедова на самом деле «горе»?',
+      '«Молчалины блаженствуют на свете»: актуален ли тип Молчалина сегодня?',
+      'Софья: жертва или соучастница фамусовского общества?',
+      'Чацкий — герой или неудачник?',
+      'Почему «Горе от ума» — это комедия, а не трагедия?'
+    ],
+    assignmentText: 'Напиши <strong>сочинение на 350–400 слов</strong> на одну из тем. Обязательно: <em>тезис во вступлении, минимум 2 цитаты с разбором, вывод с возвратом к тезису</em>. Цитаты бери из текста пьесы — даже если коротко, должно быть видно, что ты с ним работал.'
+  },
+
+  {
+    id: 3,
+    days: 'Дни 6–8',
+    title: 'Пушкин. <em>Евгений Онегин</em>',
+    subtitle: 'Анализ романа в стихах. Работа с системой образов',
+    work: 'Сочинение по образу Татьяны',
+    content: `
+<h3><span class="num">§ 1</span>Уникальность жанра</h3>
+<p>«Евгений Онегин» (1823–1830) — это <strong>роман в стихах</strong>. Парадокс: проза по сути, но стихи по форме. Пушкин изобрёл для романа специальную <em>«онегинскую строфу»</em> — 14 строк по строгой схеме рифмовки <code>AbAbCCddEffEgg</code>. Эта строфа достаточно длинна, чтобы вместить мысль, и достаточно коротка, чтобы не утомить.</p>
+
+<p>Белинский назвал роман <strong>«энциклопедией русской жизни»</strong> — в нём есть Москва и Петербург, деревня и салон, бал и охота, мода и кухня. Это первый в русской литературе текст, где жизнь показана во всей полноте быта.</p>
+
+<h3><span class="num">§ 2</span>Система образов</h3>
+<p>Главных героев четверо, и они образуют пары-зеркала:</p>
+<ul>
+  <li><strong>Онегин ↔ Ленский</strong> — скептик и романтик, разочарованный и восторженный.</li>
+  <li><strong>Татьяна ↔ Ольга</strong> — глубина и поверхностность, «русская душою» и «как жизнь поэта простодушна».</li>
+  <li><strong>Онегин ↔ Татьяна</strong> — главная пара, и они дважды меняются ролями: сначала она пишет ему письмо, потом он ей.</li>
+</ul>
+
+<div class="callout">
+  <span class="callout-label">Лотман о Татьяне</span>
+  Юрий Лотман в комментарии к роману пишет, что Татьяна — воплощение русского «дома», культурной памяти, традиции. Онегин — «бездорожье», человек без корней. Когда Татьяна отказывает Онегину в финале, она отказывает не человеку, а соблазну предать самое себя.
+</div>
+
+<h3><span class="num">§ 3</span>Два письма как зеркало</h3>
+<p>В романе есть <strong>два письма</strong> — Татьяны к Онегину (глава 3) и Онегина к Татьяне (глава 8). Они построены параллельно:</p>
+
+<table style="width:100%; font-family: var(--serif); font-size: 1.05rem; border-collapse: collapse; margin: 1.5rem 0;">
+  <tr style="border-bottom: 1px solid var(--rule);">
+    <th style="text-align: left; padding: 0.7rem; border-right: 1px solid var(--rule);">Письмо Татьяны</th>
+    <th style="text-align: left; padding: 0.7rem;">Письмо Онегина</th>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.7rem; border-right: 1px solid var(--rule);">«Я к вам пишу — чего же боле?»</td>
+    <td style="padding: 0.7rem;">«Предвижу всё: вас оскорбит…»</td>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.7rem; border-right: 1px solid var(--rule);">Робкая, но искренняя</td>
+    <td style="padding: 0.7rem;">Зрелая, но опоздавшая</td>
+  </tr>
+  <tr>
+    <td style="padding: 0.7rem; border-right: 1px solid var(--rule);">Юная провинциалка → светский лев</td>
+    <td style="padding: 0.7rem;">Лишний человек → светская дама</td>
+  </tr>
+</table>
+
+<p>Из одного только сопоставления этих двух писем можно построить целое сочинение. Это и есть базовый приём литературоведческого анализа: найти симметрию и показать, как она «работает».</p>
+
+<h3><span class="num">§ 4</span>«Лишний человек»: рождение типа</h3>
+<p>Онегин — первый в русской литературе <strong>«лишний человек»</strong> (термин ввёл Тургенев в 1850 г., но тип придумал Пушкин). Признаки:</p>
+<ul>
+  <li>дворянин, образованный;</li>
+  <li>разочарован в обществе и в себе;</li>
+  <li>не находит дела;</li>
+  <li>губит окружающих, не желая того (убивает Ленского, отвергает Татьяну).</li>
+</ul>
+<p>За Онегиным последуют Печорин, Бельтов, Рудин, Обломов. Это сквозной тип русской литературы XIX века.</p>
+
+<h3><span class="num">§ 5</span>Образ автора</h3>
+<p>Пушкин делает в «Онегине» нечто революционное: он сам становится <strong>персонажем собственного романа</strong>. «Онегин, добрый мой приятель…» — автор ходит с героем по Петербургу, он часть этого мира. Через лирические отступления (про женские ножки, про Москву, про дороги) Пушкин строит свой собственный образ — рассказчика-друга.</p>
+
+<p>Это новаторство: до Пушкина автор был <em>над</em> текстом. У Пушкина — <em>в</em> тексте.</p>
+
+<h3><span class="num">§ 6</span>Лирические отступления — половина романа</h3>
+<p>В «Евгении Онегине» примерно половина текста — это не сюжет, а <strong>лирические отступления</strong>: размышления автора о Москве, о петербургском театре, о женских ногах, о русской зиме, о дружбе, о смерти, о собственном будущем. Многие школьники их пропускают, считая «лишними». Это огромная ошибка.</p>
+
+<p>Без лирических отступлений «Онегин» — обычная любовная история. С ними — энциклопедия русской жизни. Лирические отступления выполняют сразу четыре функции:</p>
+
+<ol>
+  <li><strong>Создают образ автора-рассказчика</strong> как живого человека рядом с героями.</li>
+  <li><strong>Расширяют масштаб</strong>: конкретный сюжет про четырёх дворян превращается в портрет целой эпохи.</li>
+  <li><strong>Контрастируют с действием</strong>: после трагической дуэли Пушкин может неожиданно перейти к шутливым строкам — и контраст усиливает чувство.</li>
+  <li><strong>Создают интимную интонацию</strong>: «читатель милый», «друзья мои» — автор обращается лично к каждому, кто открыл книгу.</li>
+</ol>
+
+<div class="callout tip">
+  <span class="callout-label">Сильный приём для сочинения</span>
+  В работе по «Онегину» обязательно цитируй хотя бы одно лирическое отступление. Это сразу показывает, что ты читал не «учебник по Пушкину», а сам роман. Любимое отступление многих — про дороги в седьмой главе («Когда благому просвещенью / Отдвинем более границ…») — там Пушкин говорит, что в России нет дорог, и это до сих пор смешно и верно.
+</div>
+
+<h3><span class="num">§ 7</span>«Онегинская строфа»: как форма создаёт смысл</h3>
+<p>Пушкин специально для романа изобрёл новую форму — 14-строчную строфу со сложной схемой рифм: <code>AbAbCCddEffEgg</code> (заглавные — женские рифмы, строчные — мужские).</p>
+
+<p>Зачем такая сложность? Каждая строфа имеет внутри <strong>три части</strong>:</p>
+<ul>
+  <li><strong>Перекрёстная рифма</strong> в начале (4 строки) — задаёт тему.</li>
+  <li><strong>Парные рифмы</strong> в середине (4 строки) — развивают её.</li>
+  <li><strong>Кольцевая рифма + двустишие</strong> в конце (6 строк) — завершают мыслью или поворотом.</li>
+</ul>
+
+<p>Это идеальная форма для разговорного стиха: мысль успевает развиться и закончиться острой точкой. Многие строфы Пушкина заканчиваются именно ударным двустишием, как эпиграмма. Например:</p>
+
+<div class="pull-quote">
+  Любви все возрасты покорны;<br>
+  Но юным, девственным сердцам<br>
+  Её порывы благотворны,<br>
+  Как бури вешние полям…
+  <span class="source">Глава 8, строфа XXIX</span>
+</div>
+
+<p>Заметь, как первая строка — это законченная формула, готовая стать пословицей. И стала: «Любви все возрасты покорны» — фраза, которую знают все, даже не читавшие роман. Так работает онегинская строфа: каждая может жить сама по себе, как самостоятельное стихотворение.</p>
+
+<h3><span class="num">§ 8</span>Дуэль с Ленским: разбор сцены</h3>
+<p>Сцена дуэли (глава 6) — пик романа и главная катастрофа. Разберём её как образец того, что можно делать с одной сценой в сочинении.</p>
+
+<h4>Что происходит на поверхности:</h4>
+<p>Онегин обиделся на Ленского (тот затащил его на скучный бал к Лариным). В отместку Онегин на балу демонстративно ухаживает за Ольгой — невестой Ленского. Ленский в гневе вызывает Онегина на дуэль. Утром следующего дня Онегин убивает Ленского одним выстрелом.</p>
+
+<h4>Что происходит на самом деле:</h4>
+<p>Онегин <strong>не хочет дуэли</strong>. Он понимает, что вышло глупо. Но он <em>боится отказаться</em> — боится того, что скажет общество, тот самый «свет», от которого он якобы устал. Пушкин прямо пишет:</p>
+
+<div class="pull-quote">
+  Но дико светская вражда<br>
+  Боится ложного стыда.
+  <span class="source">Глава 6, строфа XI</span>
+</div>
+
+<p>Это самая горькая ирония романа. Онегин — герой, презирающий свет, — убивает друга <strong>именно из страха перед светским мнением</strong>. Его «лишность» оказывается фикцией: он внутренне зависим от того общества, которое внешне отвергает.</p>
+
+<h4>Как использовать в сочинении:</h4>
+<p>Через эту сцену можно показать, что главный конфликт «Онегина» не «герой против общества», а <strong>«герой против собственного притворства»</strong>. Онегин не свободен, и убийство Ленского — момент, когда эта несвобода становится смертельной. После дуэли Онегин уезжает не от тоски, а от ужаса перед собой.</p>
+
+<h3><span class="num">§ 9</span>Образец сочинения (фрагмент): про Татьяну</h3>
+<p>Тема: <em>«Татьяна Ларина как „милый идеал“ Пушкина»</em></p>
+
+<div style="background: var(--paper-dark); padding: 1.5rem; border-left: 3px solid var(--moss); font-family: var(--serif); font-size: 1.05rem; line-height: 1.6;">
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Вступление через парадокс]</strong> Любимая героиня Пушкина — провинциальная девушка, читающая французские романы и не очень умеющая выражать свои чувства по-русски. Это странный выбор для поэта, который называл себя певцом русского начала. Но именно в этой странности — ключ к Татьяне.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Тезис]</strong> Татьяна не русская по культуре — но русская по душе. Пушкин показывает, что национальность — это не язык, на котором ты говоришь, а способ, которым ты любишь, страдаешь и выбираешь.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Аргумент 1: язык]</strong> Парадокс начинается с письма. Татьяна пишет Онегину по-французски: «Она по-русски плохо знала, / Журналов наших не читала, / И выражалася с трудом / На языке своём родном». Пушкин не скрывает этого — он на этом настаивает. Татьяна говорит языком сентиментальных романов, потому что другого языка любви в её мире не существует. И всё-таки её письмо — самый русский текст во всей пушкинской поэзии. Не язык делает чувство русским, а его прямота: «Я к вам пишу — чего же боле? / Что я могу ещё сказать?» Эта простота, эта готовность всё открыть — и есть русская душа в её чистом виде.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Аргумент 2: финал]</strong> Окончательное доказательство — финальная сцена. Татьяна теперь генеральша, светская дама, она «равнодушною княгиней, / Неприступною богиней / Роскошной, царственной Невы». Онегин снова влюблён — уже в неё. Татьяна могла бы ответить, как ответила бы любая героиня французского романа: тайным согласием, страстью, обманом. Но она говорит: «Я вас люблю (к чему лукавить?), / Но я другому отдана; / Я буду век ему верна». Это <strong>не верность мужу</strong>. Муж в романе почти не появляется. Это верность <strong>самой себе</strong> — той девушке, что писала письмо и получила отказ. Татьяна не предаёт прошлое, потому что русский характер, по Пушкину, — это память о том, кем ты был.</p>
+
+<p><strong style="color: var(--moss);">[Заключение через возврат]</strong> Татьяна читала французские книги, а стала русской героиней. Это и есть пушкинское открытие: культура не определяет душу, душа выбирает культуру. Через сто лет Достоевский в «Пушкинской речи» назовёт Татьяну «апофеозом русской женщины». Он был прав — но недосказал. Татьяна не апофеоз, она программа. Пушкин не описал русскую женщину — он её придумал. И с тех пор русская литература писала именно по этой программе.</p>
+</div>
+
+<p style="margin-top: 1rem; font-family: var(--serif); font-size: 1rem; color: var(--ink-soft); font-style: italic;">~ 410 слов. Замечательное в этом образце: тезис не повторяет общее место («Татьяна — идеал»), а уточняет его («идеал не по культуре, а по душе»). Каждый аргумент работает на эту уточнённую мысль.</p>
+
+<h3><span class="num">§ 10</span>Куда углубиться</h3>
+<ul class="reading-list">
+  <li><div><a href="https://polka.academy/articles/502" target="_blank" rel="noopener">«Полка»: «Евгений Онегин»</a> — большая статья Игоря Пильщикова <span class="src">читать обязательно</span></div></li>
+  <li><div><a href="https://ilibrary.ru/text/436/p.1/index.html" target="_blank" rel="noopener">Текст романа целиком</a> — ilibrary.ru, разбит по главам <span class="src">читать онлайн</span></div></li>
+  <li><div><a href="http://feb-web.ru/feb/pushkin/critics/lot/lot-001-.htm" target="_blank" rel="noopener">Лотман Ю. М. «Роман А. С. Пушкина „Евгений Онегин“. Комментарий»</a> — золотой стандарт, особенно главы о Татьяне и о дуэли <span class="src">feb-web.ru</span></div></li>
+  <li><div><a href="https://arzamas.academy/courses/12" target="_blank" rel="noopener">«Арзамас»: курс «Русская классика. Начало»</a> — лекции о Пушкине <span class="src">видео + аудио</span></div></li>
+  <li><div><a href="http://az.lib.ru/b/belinskij_w_g/text_0210.shtml" target="_blank" rel="noopener">Белинский В. Г. Статьи 8 и 9 о Пушкине</a> — про образы Онегина и Татьяны <span class="src">15 страниц</span></div></li>
+</ul>
+    `,
+    topics: [
+      'Татьяна Ларина как «милый идеал» Пушкина: в чём её русскость?',
+      'Онегин — жертва эпохи или собственного характера?',
+      'Образ автора в «Евгении Онегине» — герой романа или его создатель?',
+      '«Я другому отдана и буду век ему верна» — подвиг или капитуляция?',
+      'Почему дуэль с Ленским — главная сцена романа?'
+    ],
+    assignmentText: 'Напиши <strong>сочинение на 400–450 слов</strong> на одну из тем. Используй <em>минимум 3 цитаты</em> (одна обязательно — из письма Татьяны или Онегина). Опирайся на оппозицию «дом / бездорожье» из Лотмана хотя бы в одном абзаце.'
+  },
+
+  {
+    id: 4,
+    days: 'Дни 9–10',
+    title: 'Лермонтов. <em>Герой нашего времени</em>',
+    subtitle: 'Сравнительный анализ. Композиция и психологизм',
+    work: 'Сравнительное сочинение',
+    content: `
+<h3><span class="num">§ 1</span>Первый психологический роман</h3>
+<p>«Герой нашего времени» (1840) — <strong>первый русский психологический роман</strong>. Лермонтов заявляет это в предисловии: «История души человеческой, хотя бы самой мелкой души, едва ли не любопытнее и не полезнее истории целого народа».</p>
+<p>До Лермонтова литература показывала, как герой <em>действует</em>. Лермонтов показывает, как герой <em>думает о своих действиях</em> — и это меняет всю русскую прозу.</p>
+
+<h3><span class="num">§ 2</span>Хитрая композиция</h3>
+<p>Главное открытие Лермонтова — <strong>нарушенная хронология</strong>. Главы идут не по времени:</p>
+<ol>
+  <li>«Бэла» — рассказ Максим Максимыча об эпизоде на Кавказе</li>
+  <li>«Максим Максимыч» — встреча рассказчика с самим Печориным</li>
+  <li>Предисловие к журналу Печорина — Печорин уже умер</li>
+  <li>«Тамань» — самое раннее по времени приключение Печорина</li>
+  <li>«Княжна Мери» — кавказский курорт, центральная часть</li>
+  <li>«Фаталист» — финал, философский вопрос</li>
+</ol>
+
+<p>Хронологически: Тамань → Княжна Мери → Фаталист → Бэла → Максим Максимыч → смерть. Лермонтов сознательно перетасовал порядок. Зачем?</p>
+
+<div class="callout tip">
+  <span class="callout-label">Зачем Лермонтов сломал время</span>
+  Чтобы мы видели Печорина <strong>«с трёх дистанций»</strong>: сначала со стороны (Максим Максимыч), потом ближе (рассказчик встречает его лично), потом изнутри (его собственный дневник). Каждое приближение углубляет понимание. Читатель сам становится исследователем «героя».
+</div>
+
+<h3><span class="num">§ 3</span>Печорин и Грушницкий: герой и его пародия</h3>
+<p>Это типичный для Лермонтова приём: <strong>двойник-карикатура</strong>. Грушницкий — Печорин для бедных. Он тоже разочарован, тоже носит маску, тоже разыгрывает страсти — но всё в нём фальшиво. Печорин видит в Грушницком то, чем мог бы стать, если бы был чуть глупее.</p>
+<p>Дуэль между ними неизбежна, потому что один из них — настоящий, а другой — копия. Двое таких в одном тексте сосуществовать не могут.</p>
+
+<h3><span class="num">§ 4</span>Онегин ↔ Печорин: сравнение</h3>
+<table style="width:100%; font-family: var(--serif); font-size: 1.02rem; border-collapse: collapse; margin: 1.5rem 0;">
+  <tr style="border-bottom: 1px solid var(--ink);">
+    <th style="text-align: left; padding: 0.6rem; border-right: 1px solid var(--rule);">Параметр</th>
+    <th style="text-align: left; padding: 0.6rem; border-right: 1px solid var(--rule);">Онегин</th>
+    <th style="text-align: left; padding: 0.6rem;">Печорин</th>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Эпоха</td>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">1820-е, до декабристов</td>
+    <td style="padding: 0.6rem;">1830-е, после разгрома</td>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Скука</td>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Пассивная, бытовая</td>
+    <td style="padding: 0.6rem;">Активная, разрушительная</td>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Отношение к смерти</td>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Боится, бежит от дуэли</td>
+    <td style="padding: 0.6rem;">Ищет, провоцирует</td>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Самоанализ</td>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Минимальный</td>
+    <td style="padding: 0.6rem;">Постоянный, до мучения</td>
+  </tr>
+  <tr>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Итог</td>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Жив, в Москве/Петербурге</td>
+    <td style="padding: 0.6rem;">Умер по дороге из Персии</td>
+  </tr>
+</table>
+
+<p><strong>Главное</strong>: Онегин — лишний человек эпохи надежды. Печорин — лишний человек эпохи разочарования. Между ними — 1825 год, восстание декабристов и его разгром.</p>
+
+<h3><span class="num">§ 5</span>«Печорин — Демон. Все делают что-то не от себя»</h3>
+<p>Так писал о романе философ Владимир Соловьёв. Печорин — родной брат лермонтовского Демона: всеми играет, никого не любит, и сам страдает. Он реализует то, что Борхес назвал бы <em>«сюжетом поиска»</em> — но это поиск без цели. Он ищет себя и не находит.</p>
+
+<h3><span class="num">§ 6</span>Дневник Печорина — революция в прозе</h3>
+<p>Журнал Печорина (вторая половина романа) — это первый настоящий <strong>внутренний монолог</strong> в русской литературе. До Лермонтова герои анализировали себя в письмах или в разговоре с другом. Печорин анализирует себя — себе.</p>
+
+<p>Прочитай этот фрагмент:</p>
+
+<div class="pull-quote">
+  Во мне два человека: один живёт в полном смысле этого слова, другой мыслит и судит его… Зачем я жил? для какой цели я родился? А, верно, она существовала, и, верно, было мне назначение высокое, потому что я чувствую в душе моей силы необъятные…
+  <span class="source">Запись Печорина перед дуэлью</span>
+</div>
+
+<p>Что здесь революционного? <strong>Самокритика без снисхождения</strong>. Печорин не оправдывает себя и не утешает. Он ставит перед собой вопросы, на которые не знает ответа. Это поведение не литературного героя, а живого, мучающегося человека.</p>
+
+<p>Через 30 лет Достоевский подхватит эту интонацию в «Записках из подполья». Через 70 лет — Толстой в исповедях Левина. Лермонтов открыл дверь, в которую вошла вся последующая русская проза.</p>
+
+<h3><span class="num">§ 7</span>Женские образы: четыре зеркала Печорина</h3>
+<p>Печорин в романе встречается с четырьмя женщинами, и каждая отражает в нём что-то своё. Это композиционный приём: через систему женщин раскрывается герой.</p>
+
+<table style="width:100%; font-family: var(--serif); font-size: 1.02rem; border-collapse: collapse; margin: 1.5rem 0;">
+  <tr style="border-bottom: 1px solid var(--ink);">
+    <th style="text-align: left; padding: 0.6rem; border-right: 1px solid var(--rule);">Женщина</th>
+    <th style="text-align: left; padding: 0.6rem; border-right: 1px solid var(--rule);">Что в ней Печорина привлекает</th>
+    <th style="text-align: left; padding: 0.6rem;">Чем заканчивается</th>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);"><strong>Бэла</strong></td>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Дикая, чужая, экзотика Кавказа</td>
+    <td style="padding: 0.6rem;">Покупает её → охладевает → она гибнет</td>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);"><strong>«Ундина»</strong> в Тамани</td>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Тайна, романтика, опасность</td>
+    <td style="padding: 0.6rem;">Чуть не убивает его — он разочарован</td>
+  </tr>
+  <tr style="border-bottom: 1px dotted var(--rule);">
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);"><strong>Княжна Мери</strong></td>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Игра, эксперимент, проверка теории</td>
+    <td style="padding: 0.6rem;">Влюбляет в себя → отвергает</td>
+  </tr>
+  <tr>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);"><strong>Вера</strong></td>
+    <td style="padding: 0.6rem; border-right: 1px solid var(--rule);">Единственная, кто его понимает</td>
+    <td style="padding: 0.6rem;">Теряет её — единственное настоящее горе романа</td>
+  </tr>
+</table>
+
+<p>Заметь: только когда Печорин теряет Веру, он плачет. «Я бросился на крыльцо, как безумный… я молился, проклинал, плакал, смеялся». Это единственный момент в романе, когда герой теряет контроль. Лермонтов показывает: за всей маской «фаталиста» скрывается человек, способный на настоящее чувство — но только тогда, когда уже поздно.</p>
+
+<h3><span class="num">§ 8</span>Финал: глава «Фаталист»</h3>
+<p>Композиция романа кончается главой, где Печорин ловит казака-убийцу с риском для жизни. И возникает странный вопрос: <strong>зачем</strong> Лермонтов закончил так?</p>
+
+<p>В «Фаталисте» Печорин впервые делает поступок, в котором не калечит ни одну женщину, не убивает друга и не разрушает жизнь. Он спасает людей, ловя убийцу. Лермонтов даёт ему — на одну страницу — шанс быть героем в обычном смысле слова. И тут же Максим Максимыч закрывает разговор привычной ворчливой репликой: «А кстати, эти азиатские курки часто осекаются».</p>
+
+<p>Это потрясающий финал. Лермонтов не даёт Печорину ни искупления, ни наказания, ни морали. Он показывает: <strong>судьба этого героя — уехать в Персию и умереть по дороге</strong>, никем не понятым. Не потому, что он плох, а потому, что время его жизни — это время после провала надежды.</p>
+
+<h3><span class="num">§ 9</span>Образец сравнительного сочинения (фрагмент)</h3>
+<p>Тема: <em>«Онегин и Печорин: две трагедии лишнего человека»</em></p>
+
+<div style="background: var(--paper-dark); padding: 1.5rem; border-left: 3px solid var(--moss); font-family: var(--serif); font-size: 1.05rem; line-height: 1.6;">
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Вступление: общее]</strong> Между Онегиным и Печориным — пятнадцать лет литературного времени и одно историческое событие: восстание декабристов 1825 года. Оба героя — образованные дворяне, оба разочарованы, оба губят тех, кто их любит. Но это сходство — внешнее. Их трагедии устроены принципиально по-разному.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Тезис]</strong> Онегин — герой, который не нашёл себя. Печорин — герой, который нашёл себя и ужаснулся. Первый страдает от пустоты, второй — от полноты, не нашедшей применения.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Контраст: Онегин]</strong> Онегин у Пушкина почти ничего не делает по своей воле. Он принимает наследство — потому что досталось. Едет в деревню — потому что скучно. Принимает вызов на дуэль — потому что не может отказаться. Даже его последний поступок, письмо к Татьяне, — это не выбор, а паника. Онегин — пассивный наблюдатель собственной жизни. Его трагедия в том, что он <strong>не способен хотеть</strong>. Внутри у него пусто, и эта пустота не страшна — она тосклива.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Контраст: Печорин]</strong> Печорин — противоположность. Он постоянно действует, постоянно играет, постоянно ставит над собой и другими эксперименты. Он соблазняет Бэлу, потому что хочет проверить, можно ли купить любовь. Он влюбляет в себя княжну Мери, чтобы измерить, как далеко зайдёт его власть над женщиной. Он провоцирует Грушницкого на дуэль, потому что хочет посмотреть в лицо собственной совести. Печорин <strong>хочет всего</strong> — но его сила не находит цели, достойной её. «Чувствую в душе моей силы необъятные», — пишет он перед дуэлью. И сразу: «Зачем я жил? для какой цели я родился?» Это вопрос человека, у которого есть всё, кроме смысла.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--moss);">[Историческая разница]</strong> Между ними — катастрофа 1825 года. Онегин жил в эпоху, когда ещё можно было верить в просвещение и реформы. Печорин жил после. Если у Онегина пустота — потому что он не знал, чего хотеть, то у Печорина пустота — потому что хотеть стало нельзя. Николаевская Россия не пускала его энергию никуда. Лермонтов показывает не личную драму, а драму поколения: лучшие силы общества оказались отрезаны от любого осмысленного действия.</p>
+
+<p><strong style="color: var(--moss);">[Заключение]</strong> Онегин и Печорин — не два варианта одного героя, а две разных болезни. Один умирает от пустоты, второй — от переполненности. Онегина можно представить вернувшимся в Москву, постаревшим, обедневшим, доживающим свой век. Печорина — невозможно. Лермонтов прямо сообщает: его герой умер по дороге из Персии. И эта смерть — единственный логичный для него финал. Энергия, не нашедшая выхода, разрушает того, кто её носит.</p>
+</div>
+
+<p style="margin-top: 1rem; font-family: var(--serif); font-size: 1rem; color: var(--ink-soft); font-style: italic;">~ 470 слов. Хорошее сравнение всегда строится не на «у обоих X, но у Y» — а на разнице самих категорий. Здесь: у одного — пустота, у другого — полнота без выхода. Это уже не сравнение, а противопоставление.</p>
+
+<h3><span class="num">§ 10</span>Куда углубиться</h3>
+<ul class="reading-list">
+  <li><div><a href="https://polka.academy/articles/523" target="_blank" rel="noopener">«Полка»: «Герой нашего времени»</a> — комментарий Льва Оборина <span class="src">обязательно</span></div></li>
+  <li><div><a href="https://ilibrary.ru/text/8/index.html" target="_blank" rel="noopener">Текст романа целиком</a> — ilibrary.ru <span class="src">читать онлайн</span></div></li>
+  <li><div><a href="http://feb-web.ru/feb/lermont/critics/eih/eih-001-.htm" target="_blank" rel="noopener">Эйхенбаум Б. М. «Лермонтов. Опыт историко-литературной оценки»</a> — классический разбор <span class="src">feb-web.ru</span></div></li>
+  <li><div><a href="https://arzamas.academy/special/ruslit/episodes/37" target="_blank" rel="noopener">«Арзамас»: Кавказ в «Герое нашего времени»</a> — лекция Константина Поливанова <span class="src">видео</span></div></li>
+  <li><div><a href="https://www.youtube.com/results?search_query=%D0%B0%D1%80%D0%BC%D0%B5%D0%BD+%D0%B8+%D1%84%D1%91%D0%B4%D0%BE%D1%80+%D0%BB%D0%B5%D1%80%D0%BC%D0%BE%D0%BD%D1%82%D0%BE%D0%B2" target="_blank" rel="noopener">«Армен и Фёдор» о Лермонтове</a> <span class="src">видео</span></div></li>
+</ul>
+    `,
+    topics: [
+      'Онегин и Печорин: две трагедии «лишнего человека»',
+      'Печорин и Грушницкий: герой и его пародия',
+      'Зачем Лермонтов нарушил хронологию в «Герое нашего времени»?',
+      'Кто виноват в смерти Бэлы — Печорин или эпоха?',
+      'Печорин — злодей или жертва?'
+    ],
+    assignmentText: 'Напиши <strong>сравнительное сочинение на 450 слов</strong> на одну из тем. Структура обязательна: <em>что общего → в чём разница → почему разница важна</em>. Минимум 2 цитаты, желательно — параллельные (одна про Онегина, одна про Печорина).'
+  },
+
+  {
+    id: 5,
+    days: 'Дни 11–12',
+    title: 'Гоголь. <em>Мёртвые души</em>',
+    subtitle: 'Поэма в прозе. Хронотоп дороги и сатира',
+    work: 'Эссе по «Мёртвым душам»',
+    content: `
+<h3><span class="num">§ 1</span>Зачем «поэма», если это проза</h3>
+<p>Гоголь назвал «Мёртвые души» (1842) <strong>поэмой</strong>, хотя книга написана прозой. Зачем? Это литературный жест, отсылка к «Божественной комедии» Данте. Гоголь задумывал трилогию: первый том — «Ад» (показал), второй — «Чистилище» (сжёг), третий — «Рай» (не написал).</p>
+
+<p>Помещики первого тома — это и есть круги ада, по которым путешествует Чичиков. И путешествует он, конечно, по России.</p>
+
+<h3><span class="num">§ 2</span>Хронотоп дороги (по Бахтину)</h3>
+<p>Михаил Бахтин ввёл понятие <strong>хронотопа</strong> — единства времени и места в литературе. Хронотоп дороги — особенный: на дороге встречаются люди, обычно никогда не пересекающиеся. На дороге невозможны быт и привычка.</p>
+<p>В «Мёртвых душах» дорога — главный сюжетообразующий принцип. Чичиков едет от помещика к помещику, и каждая встреча — новая глава, новый «круг». Финал первого тома — знаменитый монолог о «птице-тройке» — это уже не дорога Чичикова, а дорога России. Гоголь делает скачок от частного к национальному.</p>
+
+<div class="pull-quote">
+  Русь, куда ж несёшься ты? дай ответ. Не даёт ответа.
+  <span class="source">Финал первого тома</span>
+</div>
+
+<h3><span class="num">§ 3</span>Галерея помещиков как система</h3>
+<p>Гоголь располагает помещиков в строгом порядке — и это <strong>система деградации</strong>:</p>
+
+<ol>
+  <li><strong>Манилов</strong> — мечтатель, безвреден, но бесполезен. Душа есть, но «спит».</li>
+  <li><strong>Коробочка</strong> — мелочна, упряма, ограниченна. Душа сжата до размеров копилки.</li>
+  <li><strong>Ноздрёв</strong> — буян, лжец, разрушитель. Душа взбудоражена, но пуста.</li>
+  <li><strong>Собакевич</strong> — груб, тяжёл, расчётлив. Душа похожа на медвежью берлогу.</li>
+  <li><strong>Плюшкин</strong> — крайняя точка, «прореха на человечестве». Душа — мёртвая.</li>
+</ol>
+
+<p>Это не случайный порядок. Гоголь идёт от <em>«ещё человек»</em> (Манилов) к <em>«уже не человек»</em> (Плюшкин). Мёртвые души — это не крестьяне, которых скупает Чичиков. Это сами помещики.</p>
+
+<h3><span class="num">§ 4</span>Кто такой Чичиков</h3>
+<p>Чичиков — <strong>новый герой</strong> в русской литературе. Не дворянин-философ (как Онегин), не мечтатель, не злодей. Это <em>предприниматель</em>. Он первый в русской прозе человек, для которого главное — <strong>дело</strong>, а не «я».</p>
+
+<p>Описание шкатулки Чичикова — гениальный приём. Через предмет раскрывается характер: всё разложено по ящичкам, у каждой бумажки своё место, есть тайное отделение. Шкатулка — это сам Чичиков: аккуратный, расчётливый, с двойным дном.</p>
+
+<p>В современном мире Чичиков легко представим. Он бы продавал стартапы, делал серые схемы с недвижимостью, торговал NFT. Гоголь увидел тип человека, который только-только появлялся в России, — и предсказал его развитие на 200 лет вперёд.</p>
+
+<h3><span class="num">§ 5</span>Сатира + лиризм</h3>
+<p>Гоголь делает невероятное: он одновременно <strong>смеётся над Россией и любит её</strong>. Поэма построена на чередовании сатиры (помещики) и лирики (отступления о России, о юности, о дороге). Самые трогательные страницы русской литературы XIX века — рядом с самыми смешными.</p>
+
+<p>Этот контраст — ключ к Гоголю. Он критик, потому что патриот. Он смеётся, потому что любит. Если хотите быть жёсткими в эссе — следуйте этому принципу.</p>
+
+<h3><span class="num">§ 6</span>Деталь-сигнал: метод Гоголя</h3>
+<p>Гоголь — гений художественной детали. Он умеет одной мелочью выдать характер целиком. Это называют <strong>деталью-сигналом</strong>: предмет или жест, который раскрывает суть героя.</p>
+
+<p>Вот несколько примеров:</p>
+
+<ul>
+  <li><strong>Манилов</strong> — на столе у него лежит книга, заложенная на 14-й странице, «которую он постоянно читал уже два года». Один штрих — и понятно, что это бесплодный мечтатель.</li>
+  <li><strong>Коробочка</strong> — спрашивает Чичикова о цене на «мёд, сало, пеньку, полотно», после чего говорит про «мёртвых» точно так же, в одном ряду с товарами. Это не глупость — это полная редукция мира к категории «продать / купить».</li>
+  <li><strong>Ноздрёв</strong> — «среди собак, как отец родной». Он сам — собака. Не в обидном смысле, а в животном: всё на инстинктах, без рефлексии.</li>
+  <li><strong>Собакевич</strong> — мебель в его доме «тоже похожа была на хозяина», стулья «как будто говорили: и я тоже Собакевич». Гоголь распространяет фамилию на интерьер. Через предметы герой раскрывается до карикатуры.</li>
+  <li><strong>Плюшкин</strong> — собирает старые подмётки, перья, гвоздики, тащит к себе всё. Гоголь даёт целый абзац описанию этой кучи. И мы понимаем: душа этого человека стала такой же кучей бесполезного хлама.</li>
+</ul>
+
+<div class="callout tip">
+  <span class="callout-label">Это золото для сочинения</span>
+  Если ты в работе по «Мёртвым душам» процитируешь одну такую деталь и развернёшь её на абзац — у тебя сразу будет сильная страница. Школьники обычно говорят про помещиков обобщённо («Манилов — мечтатель, Коробочка — мелочна»). А ты скажешь конкретно: «Манилов два года читает 14-ю страницу — это и есть его душа: остановилось движение мысли, осталась только привычка к процессу».
+</div>
+
+<h3><span class="num">§ 7</span>Шкатулка Чичикова: предмет вместо психологии</h3>
+<p>Когда Гоголю нужно показать, кто такой Чичиков, он не лезет ему в душу. Он описывает его шкатулку. Целая страница — об устройстве этой шкатулки: «в самой середине мыльница, за мыльницею шесть-семь узеньких перегородок для бритв; потом квадратные закоулки для песочницы и чернильницы…»</p>
+
+<p>Что мы узнаём из этого описания?</p>
+
+<ul>
+  <li>Чичиков <strong>аккуратен</strong> — у каждой вещи своё место.</li>
+  <li>Чичиков <strong>предусмотрителен</strong> — отделения для всего возможного.</li>
+  <li>Чичиков <strong>скрытен</strong> — у шкатулки есть тайное отделение «куда складывались деньги».</li>
+  <li>Чичиков <strong>самостоятелен</strong> — носит свою бритву, сам себя обслуживает (барин обычно нет).</li>
+</ul>
+
+<p>Гоголь делает гениальный ход: <strong>через вещь раскрывает характер</strong>. Это позволяет ему ничего прямо не говорить о Чичикове до 11-й главы (где даётся биография). Двести страниц мы уже знаем героя — через его предметы, его движения, его манеру есть и торговаться. Психология заменена бытом, и это работает сильнее, чем прямой портрет.</p>
+
+<h3><span class="num">§ 8</span>«Птица-тройка»: лирический финал</h3>
+<p>Конец первого тома — знаменитое лирическое отступление о «птице-тройке». Многие школьники учат его наизусть, не очень понимая, зачем оно вообще там стоит.</p>
+
+<p>А оно там стоит ровно по той причине, что <strong>после галереи мёртвых душ нужен противовес</strong>. Гоголь показал нам ужас провинциальной России — и в финале вдруг переключает регистр на гимн. Дорога, по которой ехал жулик Чичиков, превращается в дорогу всей страны. Тройка лошадей, везущая бричку с авантюристом, превращается в символ России, летящей вперёд.</p>
+
+<div class="pull-quote">
+  Не так ли и ты, Русь, что бойкая необгонимая тройка, несёшься?.. Русь, куда ж несёшься ты? дай ответ. Не даёт ответа.
+  <span class="source">Финал первого тома</span>
+</div>
+
+<p>Заметь: вопрос остаётся без ответа. Гоголь не утверждает, что Россия движется к великому будущему. Он только спрашивает. И в этой неопределённости — главное. Поэма Гоголя — это <strong>любовь без иллюзий</strong>: я вижу всё уродство, но всё равно надеюсь и спрашиваю.</p>
+
+<h3><span class="num">§ 9</span>Образец эссе (фрагмент): про Чичикова сегодня</h3>
+<p>Тема: <em>«Если бы Чичиков жил в наши дни — чем бы он торговал?»</em></p>
+
+<div style="background: var(--paper-dark); padding: 1.5rem; border-left: 3px solid var(--ochre); font-family: var(--serif); font-size: 1.05rem; line-height: 1.6;">
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--ochre);">[Вступление от наблюдения]</strong> Я смотрю на ленту Instagram, и мимо проходит реклама онлайн-курса. «Как заработать миллион на маркетплейсах». Лицо у автора курса аккуратное, улыбающееся, неуловимое. Я сразу вспоминаю Чичикова. Не идею, а интонацию. Это тот же человек, только без лошадей.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--ochre);">[Тезис, развивающий наблюдение]</strong> Гениальность Гоголя в том, что Чичиков — не герой 1840-х годов. Это герой <strong>любого времени, в котором появилась возможность торговать тем, чего нет</strong>. Мёртвые души — это первый русский предприниматель в чистом виде, и его бизнес-схема не устарела за двести лет.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--ochre);">[Аргумент: что такое «мёртвая душа»]</strong> Чичиков покупал крепостных, которые числились живыми по последней ревизии, но уже умерли. По бумагам — актив, по факту — пустота. Под залог этих бумажных активов он собирался получить настоящие деньги в Опекунском совете. Это и есть универсальная схема: <strong>превратить пустоту в актив через документ</strong>. Сегодня для этого не нужны крестьяне. Достаточно курса по саморазвитию, NFT-токена с цифровой картинкой, биржевого пузыря или просто красивого лендинга. Гоголь описал не аферу николаевской эпохи — он описал бизнес-модель.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--ochre);">[Углубление: почему это страшно]</strong> Самое жуткое у Гоголя — то, что Чичиков нравится. Манилов рад знакомству, Собакевич уважает его деловую хватку, барышни на балу влюбляются. Чичиков обаятелен, потому что он <strong>зеркало</strong>: каждому даёт то, что тот хочет видеть. Современные «инфоцыгане» (как их называют) работают точно так же. Они не злодеи в человеческом смысле — они инструмент общественной слабости. Где есть желание быстрого успеха, появится Чичиков с его «душами».</p>
+
+<p><strong style="color: var(--ochre);">[Заключение через возврат]</strong> Если бы Чичиков жил сегодня, он бы продавал онлайн-курсы, NFT, инвестиционные клубы — что угодно, в чём актив существует только на бумаге. Но не стоит думать, что мы умнее людей XIX века. Мы покупаемся на тот же приём — просто упаковка изменилась. Гоголь оставил нам не сатиру, а диагностический инструмент. И когда я в следующий раз увижу в ленте «Как зарабатывать на пустоте» — я вспомню, что у этой пустоты есть имя: мёртвые души.</p>
+</div>
+
+<p style="margin-top: 1rem; font-family: var(--serif); font-size: 1rem; color: var(--ink-soft); font-style: italic;">~ 380 слов. Это эссе, а не сочинение: оно начинается с личного наблюдения, цитат почти нет, главное — мысль автора. Но мысль опирается на знание текста: автор знает, что именно покупал Чичиков и зачем. Без этого знания эссе бы провалилось.</p>
+
+<h3><span class="num">§ 10</span>Куда углубиться</h3>
+<ul class="reading-list">
+  <li><div><a href="https://polka.academy/articles/526" target="_blank" rel="noopener">«Полка»: «Мёртвые души»</a> — комментарий Варвары Бабицкой <span class="src">обязательно</span></div></li>
+  <li><div><a href="https://ilibrary.ru/text/78/index.html" target="_blank" rel="noopener">Текст поэмы целиком</a> — ilibrary.ru <span class="src">читать онлайн</span></div></li>
+  <li><div><a href="https://arzamas.academy/mag/362-mertvie_dushi" target="_blank" rel="noopener">«Арзамас»: 7 секретов «Мёртвых душ»</a> — детали, которые делают поэму гениальной <span class="src">статья</span></div></li>
+  <li><div><a href="http://feb-web.ru/feb/gogol/critics/mpg/mpg-001-.htm" target="_blank" rel="noopener">Манн Ю. В. «Поэтика Гоголя»</a> — лучшая монография <span class="src">feb-web.ru</span></div></li>
+  <li><div><a href="https://arzamas.academy/courses/56" target="_blank" rel="noopener">«Арзамас»: курс о Гоголе</a> <span class="src">видео</span></div></li>
+</ul>
+    `,
+    topics: [
+      'Если бы Чичиков жил в наши дни — чем бы он торговал?',
+      'Кто в поэме «мёртв», а кто живёт?',
+      'Дорога в «Мёртвых душах»: путь России или путь Чичикова?',
+      'Можно ли сегодня встретить Манилова, Ноздрёва, Плюшкина?',
+      'Почему Гоголь сжёг второй том?'
+    ],
+    assignmentText: 'Напиши <strong>эссе на 400 слов</strong> (это эссе, а не сочинение — то есть свободное размышление, но с опорой на текст). Можно опираться на хронотоп Бахтина или на параллель «помещики = круги ада». Цитат должно быть не больше 1–2, главное — твоя мысль.'
+  },
+
+  {
+    id: 6,
+    days: 'Дни 13–14',
+    title: 'Современный рассказ <em>как</em> приём',
+    subtitle: 'Тед Чан и Пелевин · итоговое эссе',
+    work: 'Большое итоговое эссе',
+    content: `
+<h3><span class="num">§ 1</span>Зачем фантастика серьёзной литературе</h3>
+<p>Фантастика в массовом сознании — это «развлечение». Но в серьёзной литературе фантастический приём работает иначе: он позволяет показать обычный мир с непривычной стороны. Виктор Шкловский в 1917 г. в статье «Искусство как приём» назвал это <strong>остранением</strong> — приёмом, при котором привычное вдруг становится видимым.</p>
+
+<p>Когда Толстой в «Холстомере» рассказывает мир глазами лошади, мы вдруг видим, как нелепо устроена человеческая собственность. Когда Свифт показывает Англию глазами лилипутов или великанов, проявляется абсурд политики. Когда фантасты показывают наш мир через неземное, они делают то же самое — только с большим инструментарием.</p>
+
+<div class="callout">
+  <span class="callout-label">Это и есть мост между жанрами</span>
+  Хорошая фантастика — это <strong>философия в форме сюжета</strong>. Платон излагал свои идеи через диалоги, Кафка — через метаморфозу, Тед Чан — через лингвистику инопланетян. Метод один: взгляд оттуда, откуда обычно не смотрят.
+</div>
+
+<h3><span class="num">§ 2</span>Тед Чан. «История твоей жизни» (2000)</h3>
+<p>Американский писатель китайского происхождения. Один из главных авторов современной серьёзной фантастики. По его рассказу снят фильм «Прибытие» (2016, Дени Вильнёв).</p>
+
+<p>Сюжет: лингвист доктор Луиза Бэнкс изучает язык инопланетян, прибывших на Землю. Постепенно она обнаруживает, что их язык не имеет линейного времени — он позволяет видеть прошлое, настоящее и будущее одновременно. Изучая язык, Луиза сама начинает мыслить вне времени. Она знает, что её будущая дочь умрёт молодой. И всё равно решает её родить.</p>
+
+<p>Главный вопрос рассказа: <em>если бы ты знал, что ребёнок умрёт, родил бы ты его?</em> Ответ Луизы — да. Потому что любая жизнь конечна, и важна не длина, а сама встреча. Это рассказ о смирении и любви, рассказанный через лингвистику и физику.</p>
+
+<p><strong>Литературные приёмы Чана:</strong></p>
+<ul>
+  <li><strong>Двойное повествование</strong> — главы чередуются: одна линия идёт «вперёд» (история контакта), другая — «обратно» (воспоминания о ещё не родившейся дочери).</li>
+  <li><strong>Лингвистический детектив</strong> — мы вместе с героиней постепенно расшифровываем язык, и сам процесс становится сюжетом.</li>
+  <li><strong>Сильная гипотеза Сепира–Уорфа</strong> — идея, что язык формирует мышление. Чан превращает теорию в художественный сюжет.</li>
+</ul>
+
+<p>Чтение: примерно 40 страниц. Текст можно прочесть на <a href="https://www.litmir.club/br/?b=11354" target="_blank" rel="noopener">litmir.club</a> или <a href="http://lib.ru/INOFANT/CHAN_T/zhizn.txt" target="_blank" rel="noopener">lib.ru</a>.</p>
+
+<h3><span class="num">§ 3</span>Виктор Пелевин. «Затворник и Шестипалый» (1990)</h3>
+<p>Ранний Пелевин, ещё не «модный», а свободный. 35 страниц, повесть-притча.</p>
+
+<p>Сюжет: на птицефабрике живут цыплята, готовящиеся к «Страшному Суду» (то есть к попаданию в духовку). Двое — Затворник и Шестипалый — задаются вопросами: что такое мир? что за ним? зачем мы тут? Постепенно они учатся летать (хотя «все знают, что цыплята не летают») и убегают с фабрики. Конец: они летят над городом, и Шестипалый видит сверху — это всё фабрика.</p>
+
+<p>Это классическая <strong>притча об остранении</strong>. Через героев, которые буквально не понимают, что их окружает, Пелевин показывает: мы тоже многое не понимаем в нашем мире. Прямая аллюзия на платоновскую пещеру (узники видят только тени и считают это миром), но рассказанная как анекдот.</p>
+
+<div class="pull-quote">
+  Каждое поколение цыплят свято верит, что Страшный Суд — это последняя инстанция. Но они даже не подозревают, что за стенами фабрики есть другая фабрика.
+  <span class="source">Парафраз идеи Пелевина</span>
+</div>
+
+<p>Обрати внимание на <strong>работу с речью</strong>: Пелевин даёт цыплятам пафосный «жреческий» язык, и контраст между этим стилем и реальностью (они — обычные цыплята) создаёт всю комическую и философскую силу текста. Это важный урок: <em>стиль может быть приёмом не меньше, чем сюжет</em>.</p>
+
+<p>Текст доступен: <a href="http://lib.ru/PELEWIN/zatwornik.txt" target="_blank" rel="noopener">lib.ru/PELEWIN</a>.</p>
+
+<h3><span class="num">§ 4</span>Что общего между Чаном и Пелевиным</h3>
+<p>Оба автора используют фантастический приём, чтобы поставить <strong>классический философский вопрос</strong>:</p>
+<ul>
+  <li>Тед Чан — спрашивает: <em>как нужно жить, зная финал?</em></li>
+  <li>Пелевин — спрашивает: <em>откуда мы знаем, что наш мир — настоящий?</em></li>
+</ul>
+
+<p>Это вопросы, на которые отвечали Шопенгауэр, Камю, буддийские монахи. Просто Чан и Пелевин рассказывают это через приключение. И именно это делает оба рассказа примерами современной литературы, которая не отделяет «развлечение» от «глубины».</p>
+
+<h3><span class="num">§ 5</span>Связь с курсом</h3>
+<p>В каждом тексте курса герой оказывается «не на своём месте» — и это раскрывает мир:</p>
+<ul>
+  <li>Чацкий <strong>возвращается</strong> в Москву после долгой отлучки и видит общество новыми глазами.</li>
+  <li>Татьяна <strong>попадает</strong> из деревни в петербургский свет — и не теряет себя.</li>
+  <li>Печорин <strong>оторван</strong> от своей среды и заброшен на Кавказ.</li>
+  <li>Чичиков <strong>чужак</strong> в каждом новом городе — приезжает и уезжает.</li>
+  <li>Мечтатель Достоевского <strong>живёт в придуманном мире</strong>, в собственной голове.</li>
+  <li>Матрёна Солженицына — <strong>праведница среди обыденного</strong>, в чужом ей советском быту.</li>
+  <li>Луиза Чана и Шестипалый Пелевина — пограничные герои, через которых видна реальность.</li>
+</ul>
+
+<p>Это значит: <strong>литература сама по себе — это всегда остранение</strong>. Мы читаем именно для того, чтобы увидеть привычное по-новому. Чтение — это и есть погружение в чужой опыт.</p>
+
+<h3><span class="num">§ 6</span>«Белые ночи» Достоевского: Мечтатель как тот же тип</h3>
+<p>В программе 9 класса есть короткая повесть Достоевского <strong>«Белые ночи»</strong> (1848) — и она удивительно ложится в ту же логику. Мечтатель — это герой, который не находится в реальности. Он живёт в собственных фантазиях, выстраивает воображаемые отношения, переживает их с такой же интенсивностью, как настоящие.</p>
+
+<p>Когда Мечтатель встречает Настеньку, его захватывает не только её красота — а сам факт, что воображение материализовалось. Реальная девушка пришла в его выдуманный мир. И когда она уходит к жильцу, Мечтатель не злится — он благодарен:</p>
+
+<div class="pull-quote">
+  Целая минута блаженства! Да разве этого мало хоть бы и на всю жизнь человеческую?..
+  <span class="source">Финал «Белых ночей»</span>
+</div>
+
+<p>Это и есть <strong>остранение применённое к чувству</strong>: Достоевский показывает, что для Мечтателя одна минута настоящей встречи весит больше, чем годы воображения. Он не страдает от потери — он радуется тому, что было. Это парадоксальный, очень не-современный способ переживания.</p>
+
+<p>Связь с Чаном здесь прямая. Героиня «Истории твоей жизни» Луиза Бэнкс делает то же самое в финале: зная, что её дочь умрёт молодой, она всё равно решает её родить. Потому что важна не длина события, а сам факт встречи. Между Достоевским 1848 года и Чаном 2000 года — двести лет, разные страны, разные жанры. Но мысль одна: <strong>смысл жизни — в том, что было, а не в том, как долго это было</strong>.</p>
+
+<h3><span class="num">§ 7</span>Шкловский и остранение: подробнее</h3>
+<p>Виктор Шкловский в статье «Искусство как приём» (1917) дал классическое определение:</p>
+
+<div class="pull-quote">
+  Целью искусства является дать ощущение вещи как видение, а не как узнавание; приёмом искусства является приём «остранения» вещей и приём затруднённой формы…
+  <span class="source">В. Б. Шкловский, 1917</span>
+</div>
+
+<p>Что это значит на практике? Когда мы видим знакомую вещь в обычном контексте, мы её <strong>не видим</strong> — мы её узнаём. Узнавание не требует внимания. А искусство — это всегда внимание. Поэтому художник должен показать вещь так, как мы её никогда не видели, чтобы мы её действительно увидели.</p>
+
+<p>Шкловский приводил пример из Толстого. В рассказе «Холстомер» история русского крепостного права рассказана глазами лошади:</p>
+
+<ul>
+  <li>Лошадь не понимает, как один человек может «принадлежать» другому.</li>
+  <li>Лошадь видит, что слова «мой дом», «моя земля», «моя жена» — это просто звуки, которыми люди обозначают свою власть.</li>
+  <li>И от взгляда лошади всё человеческое устройство выглядит абсурдно.</li>
+</ul>
+
+<p>Это и есть остранение: знакомое (право собственности) показано через незнакомую оптику (зрение лошади), и оно становится видно. Мы перестаём принимать его как данность.</p>
+
+<h3><span class="num">§ 8</span>Как использовать остранение в собственном тексте</h3>
+<p>Остранение — не только литературный приём, который ты можешь анализировать. Его можно <strong>использовать самостоятельно</strong>, когда пишешь эссе. Вот несколько приёмов:</p>
+
+<ol>
+  <li><strong>Описать привычное «как видишь впервые»</strong>. Например: «школа — это здание, в котором дети по сигналу звонка перемещаются между комнатами и слушают взрослых». Это банально звучит — но именно из-за банальности проступает странность системы.</li>
+  <li><strong>Изменить точку зрения</strong>. Описать ситуацию глазами не того, кто в неё вовлечён. Например, любовное письмо глазами того, кто его не получит.</li>
+  <li><strong>Намеренно «не знать» термина</strong>. Не говорить «школьное сочинение», а описать его функционально: «текст, который пишут не для того, чтобы кто-то его прочёл, а для того, чтобы получить оценку».</li>
+</ol>
+
+<p>В итоговом эссе курса (ниже) можешь попробовать этот приём. Например: что увидел бы Чичиков, попав в современную Москву? Какой урок дала бы Татьяна Ларина участнице «Дома-2»? Как Печорин сидел бы в Telegram?</p>
+
+<h3><span class="num">§ 9</span>Образец итогового эссе (фрагмент)</h3>
+<p>Тема: <em>«Литература как остранение: каждое чтение — это взгляд со стороны»</em></p>
+
+<div style="background: var(--paper-dark); padding: 1.5rem; border-left: 3px solid var(--ochre); font-family: var(--serif); font-size: 1.05rem; line-height: 1.6;">
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--ochre);">[Вступление от парадокса]</strong> Когда мне было десять, я думал, что чтение — это способ перенестись в другой мир. Когда мне стало пятнадцать, я обнаружил странную вещь: после хорошей книги привычный мир выглядит иначе. Не потому, что я в нём что-то изменил. Потому, что я <strong>вернулся не таким</strong>.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--ochre);">[Тезис]</strong> Литература не вытаскивает нас из реальности — она возвращает нас в неё с новыми глазами. И это объясняет, почему за две недели я прочитал шесть очень разных книг и почему все они говорят, в сущности, об одном.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--ochre);">[Связка с Шкловским]</strong> Виктор Шкловский в 1917 году назвал это остранением. По его мысли, искусство должно показать вещь так, чтобы мы её увидели заново. Привычное мы перестаём замечать. Чацкий приехал в Москву и вдруг увидел свой родной город как чужой — и нам с ним стало видно фамусовское общество. Чичиков ездит из дома в дом, и перед нами раскрывается вся Россия — мы бы её не разглядели изнутри.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--ochre);">[Развитие через современность]</strong> Самое неожиданное случилось, когда я читал Теда Чана. Героиня «Истории твоей жизни» учит язык, в котором нет линейного времени. И понимает: можно знать конец и всё равно идти в начало. Я закрыл книгу и подумал о Татьяне Лариной. О её последнем разговоре с Онегиным. «Я вас люблю, но я другому отдана». Татьяна тоже знает финал. Она знает, что любит Онегина, и знает, что не будет с ним. И она выбирает идти дальше — не потому, что не любит, а потому, что верность самой себе для неё важнее счастья. Между Чаном и Пушкиным двести лет. Но мысль одна: важна не длина пути, а его честность.</p>
+
+<p style="margin-bottom: 0.8rem;"><strong style="color: var(--ochre);">[Поворот к личному]</strong> Я начал читать «Матрёнин двор», ожидая ещё одну скучную советскую прозу. Через двадцать страниц я не мог оторваться. Старуха в деревне, потерявшая всех детей, отдающая последнее соседям, погибшая под колёсами поезда — это не «персонаж». Это диагноз современному миру, в котором мы привыкли мерить ценность человека по его эффективности. Матрёна неэффективна. Поэтому она и есть праведница — единственная категория, которую современность не умеет измерять.</p>
+
+<p><strong style="color: var(--ochre);">[Заключение через метафору]</strong> Я подумал, что чтение — это не побег и не развлечение. Это разворот. Книга разворачивает нас лицом к тому, на что мы смотрели всю жизнь и не видели. Грибоедов разворачивает нас к школе и компании, в которых мы живём. Лермонтов — к собственным мотивам и страхам. Гоголь — к стране и её устройству. Чан — ко времени и смерти. Каждая хорошая книга — это маленькое остранение, после которого что-то в обычной жизни становится видно. И это, я думаю, и есть единственный смысл, ради которого стоит читать.</p>
+</div>
+
+<p style="margin-top: 1rem; font-family: var(--serif); font-size: 1rem; color: var(--ink-soft); font-style: italic;">~ 530 слов. Это итоговое эссе сильно отличается от обычного сочинения: оно держится на личном опыте, опирается на 4–5 произведений курса, использует одно теоретическое понятие (остранение) как нить, и все аргументы возвращаются к тезису. Цитат почти нет — но видно знание текстов.</p>
+
+<h3><span class="num">§ 10</span>Куда углубиться</h3>
+<ul class="reading-list">
+  <li><div><a href="http://lib.ru/PELEWIN/zatwornik.txt" target="_blank" rel="noopener">Пелевин В. «Затворник и Шестипалый»</a> — текст в открытом доступе <span class="src">читать</span></div></li>
+  <li><div><a href="http://lib.ru/INOFANT/CHAN_T/zhizn.txt" target="_blank" rel="noopener">Тед Чан. «История твоей жизни»</a> — текст в открытом доступе <span class="src">читать</span></div></li>
+  <li><div><a href="http://philologos.narod.ru/classics/shklovsky-priem.htm" target="_blank" rel="noopener">Шкловский В. Б. «Искусство как приём» (1917)</a> — статья, где введено понятие «остранение». 15 страниц, читается за вечер <span class="src">основа теории</span></div></li>
+  <li><div><a href="http://lib.ru/BORHES/sad.txt" target="_blank" rel="noopener">Борхес Х. Л. «Сад расходящихся тропок»</a> — 15 страниц, ещё одна классика обращения со временем <span class="src">сборник «Вымыслы»</span></div></li>
+  <li><div><a href="https://gorky.media" target="_blank" rel="noopener">Журнал «Горький»</a> — современная литературная критика, есть тексты о Пелевине и Чане <span class="src">статьи</span></div></li>
+  <li><div><a href="https://www.youtube.com/results?search_query=%D0%B0%D1%80%D0%BC%D0%B5%D0%BD+%D0%B8+%D1%84%D1%91%D0%B4%D0%BE%D1%80+%D0%BF%D0%B5%D0%BB%D0%B5%D0%B2%D0%B8%D0%BD" target="_blank" rel="noopener">«Армен и Фёдор» о Пелевине</a> <span class="src">видео</span></div></li>
+</ul>
+    `,
+    topics: [
+      'Литература как остранение: каждое чтение — это взгляд со стороны',
+      'Печорин, Чичиков, Шестипалый: три типа героя, который «не отсюда»',
+      'Что общего у Татьяны Лариной и героини Теда Чана? (обе принимают неизбежное)',
+      'Почему лучшая фантастика — это переодетая философия?',
+      'Если бы я писал рассказ-притчу, кого и куда бы я отправил?',
+      'Что я понял о русской литературе за эти 14 дней'
+    ],
+    assignmentText: 'Это <strong>итоговое эссе на 500–600 слов</strong>. Здесь нужно показать всё, чему ты научился: тезис, аргументы, цитаты, личный взгляд, опора на теоретическое понятие (борхесовские «четыре цикла», или хронотоп Бахтина, или «остранение» Шкловского — на выбор). Можешь опираться на 2–3 произведения из всего курса. Главное — собственная мысль.'
+  }
+];
+
+// ============ STATE ============
+let state = {
+  parentEmail: 'aatamanoff@gmail.com',
+  completed: [],
+  sent: [],          // уроки, по которым работа отправлена
+  currentDay: null,
+  drafts: {},
+  selectedTopics: {},
+  sentMeta: {}       // {lessonId: {date, words, aiScore}}
+};
+
+function loadState() {
+  try {
+    const saved = localStorage.getItem('litCourseState');
+    if (saved) state = { ...state, ...JSON.parse(saved) };
+    if (!state.sent) state.sent = [];
+    if (!state.sentMeta) state.sentMeta = {};
+  } catch (e) {}
+}
+function saveState() {
+  try {
+    localStorage.setItem('litCourseState', JSON.stringify(state));
+  } catch (e) {}
+}
+
+// ============ EMAIL ============
+function saveEmail() {
+  const input = document.getElementById('parentEmail');
+  state.parentEmail = input.value.trim();
+  saveState();
+  const pill = document.getElementById('emailSaved');
+  pill.classList.add('show');
+  setTimeout(() => pill.classList.remove('show'), 2000);
+}
+
+// ============ AI DETECTOR ============
+// Эвристический анализ: ищем признаки, типичные для AI-сгенерированных текстов.
+// Не претендует на 100% точность — даёт сигнал, который родитель может проверить.
+function analyzeForAI(text) {
+  const flags = [];
+  const positives = [];
+  const t = text.trim();
+  const lower = t.toLowerCase();
+  const words = t.split(/\s+/).filter(w => w.length > 0);
+  const sentences = t.split(/[.!?…]+/).filter(s => s.trim().length > 5);
+  const wordCount = words.length;
+
+  if (wordCount < 30) {
+    return { score: 0, level: 'low', flags: [{ ok: true, text: 'Слишком короткий текст для проверки' }] };
+  }
+
+  let score = 0;
+
+  // 1. Типичные «GPT-обороты» — клише, которые модели вставляют почти всегда
+  const aiPhrases = [
+    'в заключение', 'таким образом', 'стоит отметить', 'важно подчеркнуть',
+    'нельзя не отметить', 'следует подчеркнуть', 'в современном мире',
+    'играет важную роль', 'занимает особое место', 'не теряет актуальности',
+    'актуально и сегодня', 'на протяжении веков', 'затрагивает важные',
+    'поднимает вопросы', 'находит отклик', 'становится очевидным',
+    'не оставляет равнодушным', 'погружает читателя', 'оставляет след',
+    'каждый из нас', 'каждый человек', 'в наше время',
+    'неотъемлемой частью', 'на первый взгляд', 'тем не менее',
+    'по сей день', 'из глубины веков', 'с одной стороны',
+    'с другой стороны', 'нельзя обойти стороной'
+  ];
+  let aiPhraseHits = 0;
+  const foundPhrases = [];
+  for (const p of aiPhrases) {
+    if (lower.includes(p)) {
+      aiPhraseHits++;
+      foundPhrases.push(p);
+    }
+  }
+  if (aiPhraseHits >= 6) {
+    score += 45;
+    flags.push({ text: `Очень много типичных «AI-оборотов» (${aiPhraseHits}): «${foundPhrases.slice(0,4).join('», «')}»…` });
+  } else if (aiPhraseHits >= 4) {
+    score += 30;
+    flags.push({ text: `Много типичных «AI-оборотов» (${aiPhraseHits}): «${foundPhrases.slice(0,3).join('», «')}»…` });
+  } else if (aiPhraseHits >= 2) {
+    score += 15;
+    flags.push({ text: `Несколько типичных AI-оборотов: «${foundPhrases.join('», «')}»` });
+  }
+
+  // 2. Длина предложений — у AI часто слишком ровная средняя длина (15–22 слов)
+  if (sentences.length >= 5) {
+    const lens = sentences.map(s => s.trim().split(/\s+/).length);
+    const avg = lens.reduce((a,b) => a+b, 0) / lens.length;
+    const variance = lens.reduce((a,b) => a + (b-avg)*(b-avg), 0) / lens.length;
+    const stddev = Math.sqrt(variance);
+    // Низкая дисперсия + средняя длина в «опасной зоне» 14-24 — подозрительно
+    if (stddev < 4 && avg > 13 && avg < 25) {
+      score += 20;
+      flags.push({ text: `Подозрительно ровная длина предложений (среднее: ${avg.toFixed(1)} слов, разброс маленький). Живая речь обычно прыгает: длинные → короткие → средние.` });
+    } else {
+      positives.push({ ok: true, text: `Длина предложений естественно варьируется` });
+    }
+  }
+
+  // 3. Отсутствие живых маркеров — ошибок, личных деталей, разговорных слов
+  const liveMarkers = [
+    'я думаю', 'мне кажется', 'по-моему', 'на мой взгляд',
+    'честно говоря', 'если честно', 'не знаю', 'не уверен',
+    'наверное', 'может быть', 'возможно', 'кажется',
+    'вообще', 'короче', 'просто', 'как будто', 'словно',
+    'когда я', 'у меня', 'мне', 'мой', 'моя', 'моё',
+    'помню', 'знаю одного', 'однажды'
+  ];
+  let liveHits = 0;
+  for (const m of liveMarkers) {
+    if (lower.includes(m)) liveHits++;
+  }
+  // Для эссе личных маркеров должно быть много, для сочинения — поменьше, но хоть какие-то
+  if (liveHits === 0 && wordCount > 150) {
+    score += 20;
+    flags.push({ text: 'Полностью отсутствуют личные маркеры («я думаю», «мне кажется», «по-моему»). Текст звучит безлично — возможно, генерация.' });
+  } else if (liveHits >= 2) {
+    positives.push({ ok: true, text: `Есть живые личные маркеры (${liveHits} шт.)` });
+  }
+
+  // 4. Типичные AI-структуры в начале абзацев
+  const aiStarters = /(^|\n\s*)(во-первых|во-вторых|в-третьих|кроме того|помимо этого|более того|также важно|итак|подводя итог)/gi;
+  const starterMatches = (t.match(aiStarters) || []).length;
+  if (starterMatches >= 3) {
+    score += 15;
+    flags.push({ text: `Слишком «структурированное» построение («во-первых», «кроме того», «таким образом» — ${starterMatches} раз). Школьник обычно пишет менее формально.` });
+  }
+
+  // 5. Слишком «гладкий» словарь — отсутствие сокращений, повторов, разговорности
+  const colloquial = /(не\s+\w+ось|че\b|щас|просто|вообще|типа|вроде|хотя бы)/gi;
+  const colloqHits = (t.match(colloquial) || []).length;
+  if (colloqHits === 0 && wordCount > 200) {
+    score += 10;
+    flags.push({ text: 'Совсем нет разговорных слов и «неровностей». Идеально гладкий текст у 15-летнего — редкость.' });
+  }
+
+  // 6. Слишком общие, «универсальные» фразы про литературу
+  const generics = [
+    'великий русский писатель', 'выдающийся писатель',
+    'гениальное произведение', 'шедевр мировой литературы',
+    'мастерски передаёт', 'тонко чувствует',
+    'одно из самых известных', 'одно из лучших произведений'
+  ];
+  let genericHits = 0;
+  for (const g of generics) {
+    if (lower.includes(g)) genericHits++;
+  }
+  if (genericHits >= 3) {
+    score += 25;
+    flags.push({ text: 'Много «школьно-википедийных» штампов («великий писатель», «гениальное произведение», «шедевр»). Типичный признак AI или некритично переписанной статьи.' });
+  } else if (genericHits >= 2) {
+    score += 15;
+    flags.push({ text: 'Часто встречаются «школьно-википедийные» штампы («великий писатель», «гениальное произведение»). Это типично и для слабых сочинений, и для AI.' });
+  }
+
+  // 7. Идеальная пунктуация при объёме > 300 слов — настораживает
+  // (живой школьник почти всегда делает хоть одну ошибку)
+  const obviousErrors = /(\bто-же\b|\bтак-же\b|\bв течени[ие]\b|\bне\s+могу\s+не\b)/gi;
+  // Это не критерий, просто замечание — пропускаем
+
+  // Подсчёт итога
+  if (positives.length > 0) {
+    flags.push(...positives);
+  }
+  if (score === 0) {
+    flags.unshift({ ok: true, text: 'Признаков генерации не обнаружено — текст похож на работу человека.' });
+  }
+
+  let level;
+  if (score < 25) level = 'low';
+  else if (score < 55) level = 'mid';
+  else level = 'high';
+
+  return { score: Math.min(score, 100), level, flags };
+}
+
+// ============ RENDER TOC ============
+function renderToc() {
+  const grid = document.getElementById('dayGrid');
+  grid.innerHTML = lessons.map(l => `
+    <a class="day-card ${state.completed.includes(l.id) ? 'completed' : ''}" onclick="goToDay(${l.id})">
+      <div class="day-num">${String(l.id).padStart(2,'0')}</div>
+      <div class="day-title">${l.title.replace(/<[^>]+>/g, '')}</div>
+      <div class="day-mark">${l.days}</div>
+    </a>
+  `).join('');
+}
+
+// ============ RENDER PROGRESS DASHBOARD ============
+function getLessonStatus(lessonId) {
+  if (state.sent.includes(lessonId)) return 'sent';
+  const draft = (state.drafts[lessonId] || '').trim();
+  if (draft.length > 30) return 'draft';
+  return 'pending';
+}
+
+function renderProgressDashboard() {
+  const total = lessons.length;
+  const sent = state.sent.length;
+  const inProgress = lessons.filter(l => getLessonStatus(l.id) === 'draft').length;
+  const totalWords = Object.values(state.sentMeta).reduce((sum, m) => sum + (m.words || 0), 0);
+
+  document.getElementById('progressStats').innerHTML = `
+    <div class="stat-cell">
+      <div class="stat-num">${sent}<span style="color:var(--rule); font-size:1.3rem;">/${total}</span></div>
+      <div class="stat-label">Работ отправлено</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">${inProgress}</div>
+      <div class="stat-label">В черновиках</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">${totalWords}</div>
+      <div class="stat-label">Всего слов написано</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">${Math.round((sent/total)*100)}<span style="font-size:1.3rem;">%</span></div>
+      <div class="stat-label">Прогресс курса</div>
+    </div>
+  `;
+
+  document.getElementById('progressTbody').innerHTML = lessons.map(l => {
+    const status = getLessonStatus(l.id);
+    const meta = state.sentMeta[l.id];
+    const statusBadge = {
+      pending: '<span class="status-badge status-pending">Не начат</span>',
+      draft: '<span class="status-badge status-draft">Черновик</span>',
+      sent: '<span class="status-badge status-sent">Отправлен ✓</span>'
+    }[status];
+    const detail = meta
+      ? `${meta.words} слов · ${new Date(meta.date).toLocaleDateString('ru-RU')}`
+      : status === 'draft'
+        ? `${countWords(state.drafts[l.id] || '')} слов в черновике`
+        : '—';
+    return `
+      <tr>
+        <td><span style="font-family:var(--serif); font-style:italic; font-size:1.3rem; color:var(--ochre);">${l.id}</span></td>
+        <td>
+          <div style="font-family:var(--serif); font-size:1.05rem;">${l.title.replace(/<[^>]+>/g, '')}</div>
+          <div style="font-family:var(--mono); font-size:0.7rem; color:var(--ink-soft); margin-top:2px;">${detail}</div>
+        </td>
+        <td style="font-family:var(--mono); font-size:0.8rem; color:var(--ink-soft);">${l.days}</td>
+        <td>${statusBadge}</td>
+        <td><a onclick="goToDay(${l.id})" style="font-family:var(--mono); font-size:0.75rem; color:var(--moss); cursor:pointer; text-transform:uppercase; letter-spacing:0.1em;">→ открыть</a></td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// ============ RENDER LESSON ============
+function renderLesson(id) {
+  const l = lessons.find(x => x.id === id);
+  if (!l) return;
+
+  const draft = state.drafts[id] || '';
+  const selectedTopic = state.selectedTopics[id] !== undefined ? state.selectedTopics[id] : -1;
+
+  const prevId = id > 1 ? id - 1 : null;
+  const nextId = id < lessons.length ? id + 1 : null;
+
+  const html = `
+    <article class="lesson active">
+      <div class="lesson-header">
+        <div class="lesson-meta">
+          <span class="day-tag">${l.days} · Урок ${l.id} из ${lessons.length}</span>
+          <span><a onclick="goHome()" style="cursor:pointer; color: var(--moss);">← к программе</a></span>
+        </div>
+        <h2>${l.title}</h2>
+        <div class="lesson-subtitle">${l.subtitle}</div>
+      </div>
+
+      ${l.content}
+
+      <div class="ornament">❦ ❦ ❦</div>
+
+      <div class="assignment">
+        <h4>${l.work}</h4>
+        <p style="font-family: var(--serif); font-size: 1.08rem; margin-bottom: 1rem;">${l.assignmentText}</p>
+        <p style="font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 0.5rem;">Выбери одну тему:</p>
+        <ul class="topic-list" id="topicList">
+          ${l.topics.map((t, i) => `
+            <li class="${selectedTopic === i ? 'selected' : ''}" onclick="selectTopic(${l.id}, ${i})">${t}</li>
+          `).join('')}
+        </ul>
+
+        <div class="editor-area">
+          <label>Текст работы</label>
+          <textarea id="essayText" placeholder="Начни писать здесь..." oninput="onTextChange(${l.id})">${draft}</textarea>
+          <div class="word-count" id="wordCount">${countWords(draft)} слов</div>
+        </div>
+
+        <div class="action-row">
+          <button class="btn" onclick="sendWork(${l.id})">📧 Отправить родителю</button>
+          <button class="btn btn-secondary" onclick="markCompleted(${l.id})">✓ Отметить как сделанное</button>
+          <button class="btn btn-secondary" onclick="clearDraft(${l.id})">Очистить</button>
+        </div>
+        <p style="font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft); margin-top: 0.8rem; letter-spacing: 0.05em;">Кнопка «Отправить» откроет почтовый клиент с готовым письмом — нужно только нажать «Отправить» в почте.</p>
+      </div>
+
+      <nav class="lesson-nav">
+        ${prevId ? `<a onclick="goToDay(${prevId})">
+          <span class="label">← Урок ${prevId}</span>
+          <span class="title">${lessons[prevId-1].title.replace(/<[^>]+>/g, '')}</span>
+        </a>` : `<a onclick="goHome()"><span class="label">← главная</span><span class="title">Программа</span></a>`}
+
+        ${nextId ? `<a class="next" onclick="goToDay(${nextId})">
+          <span class="label">Урок ${nextId} →</span>
+          <span class="title">${lessons[nextId-1].title.replace(/<[^>]+>/g, '')}</span>
+        </a>` : `<a class="next" onclick="goHome()"><span class="label">главная →</span><span class="title">Курс закончен</span></a>`}
+      </nav>
+    </article>
+  `;
+
+  document.getElementById('lessons').innerHTML = html;
+}
+
+// ============ NAVIGATION ============
+function goToDay(id) {
+  state.currentDay = id;
+  saveState();
+  document.getElementById('home').classList.remove('active');
+  document.getElementById('lessons').style.display = 'block';
+  renderLesson(id);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  updateProgress();
+}
+function goHome() {
+  state.currentDay = null;
+  saveState();
+  document.getElementById('home').classList.add('active');
+  document.getElementById('lessons').style.display = 'none';
+  document.getElementById('lessons').innerHTML = '';
+  renderToc();
+  renderProgressDashboard();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  updateProgress();
+}
+
+// ============ ASSIGNMENT ============
+function selectTopic(lessonId, topicIdx) {
+  state.selectedTopics[lessonId] = topicIdx;
+  saveState();
+  document.querySelectorAll('#topicList li').forEach((el, i) => {
+    el.classList.toggle('selected', i === topicIdx);
+  });
+}
+
+function onTextChange(lessonId) {
+  const text = document.getElementById('essayText').value;
+  state.drafts[lessonId] = text;
+  saveState();
+  document.getElementById('wordCount').textContent = countWords(text) + ' слов';
+}
+
+function countWords(text) {
+  return text.trim() ? text.trim().split(/\s+/).length : 0;
+}
+
+function clearDraft(lessonId) {
+  if (!confirm('Очистить текст работы? Это действие необратимо.')) return;
+  state.drafts[lessonId] = '';
+  state.selectedTopics[lessonId] = -1;
+  saveState();
+  renderLesson(lessonId);
+}
+
+function markCompleted(lessonId) {
+  if (!state.completed.includes(lessonId)) {
+    state.completed.push(lessonId);
+    saveState();
+    showModal('Отмечено!', 'Урок ' + lessonId + ' помечен как выполненный. Можешь переходить к следующему.', null);
+    updateProgress();
+  } else {
+    showModal('Уже выполнен', 'Этот урок уже отмечен. Перейдёшь к следующему?', () => {
+      const nextId = lessonId + 1;
+      if (nextId <= lessons.length) goToDay(nextId);
+      else goHome();
+    });
+  }
+}
+
+// ============ SEND ============
+function sendWork(lessonId) {
+  const lesson = lessons.find(x => x.id === lessonId);
+  const text = (state.drafts[lessonId] || '').trim();
+  const topicIdx = state.selectedTopics[lessonId];
+
+  if (!text) {
+    showModal('Текста ещё нет', 'Сначала напиши работу в поле выше, потом отправляй.', null);
+    return;
+  }
+  if (text.split(/\s+/).length < 50) {
+    if (!confirm('В работе пока меньше 50 слов. Точно отправить?')) return;
+  }
+  if (topicIdx === undefined || topicIdx < 0) {
+    showModal('Выбери тему', 'Кликни на одну из тем выше, чтобы её закрепить за работой.', null);
+    return;
+  }
+
+  const email = state.parentEmail;
+  if (!email) {
+    showModal('Нет email родителя', 'Вернись на главную и впиши email родителя в верхнем поле, потом сохрани.', () => goHome());
+    return;
+  }
+
+  // AI-проверка — показываем результат и даём решить
+  const check = analyzeForAI(text);
+  showAICheckModal(check, () => {
+    actuallySendEmail(lessonId, lesson, text, topicIdx, email, check);
+  });
+}
+
+function actuallySendEmail(lessonId, lesson, text, topicIdx, email, check) {
+  const topic = lesson.topics[topicIdx];
+  const lessonTitle = lesson.title.replace(/<[^>]+>/g, '');
+  const subject = `[Литература · Урок ${lessonId}] ${lessonTitle}`;
+
+  // В письме родителю — статус AI-проверки, чтобы он сразу видел сигнал
+  const aiNote = check.score < 25
+    ? '✓ AI-проверка: признаков генерации не найдено'
+    : check.score < 55
+      ? `⚠ AI-проверка: умеренные признаки (${check.score}/100). Стоит обсудить с автором.`
+      : `⚠⚠ AI-проверка: высокие признаки генерации (${check.score}/100). Рекомендуется обсудить.`;
+
+  const body = `Тема работы: ${topic}\n\nУрок: ${lessonId}. ${lessonTitle}\nЖанр работы: ${lesson.work}\nСлов: ${countWords(text)}\nДата: ${new Date().toLocaleDateString('ru-RU')}\n${aiNote}\n\n${'─'.repeat(40)}\n\n${text}\n\n${'─'.repeat(40)}\nОтправлено из курса «Литература · 14 дней»`;
+
+  const mailto = `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+
+  // Помечаем урок отправленным
+  if (!state.sent.includes(lessonId)) state.sent.push(lessonId);
+  if (!state.completed.includes(lessonId)) state.completed.push(lessonId);
+  state.sentMeta[lessonId] = {
+    date: new Date().toISOString(),
+    words: countWords(text),
+    aiScore: check.score
+  };
+  saveState();
+  updateProgress();
+  renderProgressDashboard();
+}
+
+function showAICheckModal(check, onContinue) {
+  const levelClass = `check-${check.level}`;
+  const levelText = {
+    low: 'Низкий риск',
+    mid: 'Средний риск',
+    high: 'Высокий риск'
+  }[check.level];
+  const verdictText = {
+    low: 'Текст похож на работу человека. Можно отправлять.',
+    mid: 'Есть несколько признаков генерации. Перечитай — точно ли это твой голос?',
+    high: 'Много признаков генерации. Стоит переписать своими словами — родитель увидит результат проверки в письме.'
+  }[check.level];
+
+  const flagsHTML = check.flags.map(f =>
+    `<li class="${f.ok ? 'ok' : ''}">${f.text}</li>`
+  ).join('');
+
+  const modal = document.querySelector('.modal');
+  modal.classList.add('wide');
+  modal.innerHTML = `
+    <h3>Проверка перед отправкой</h3>
+    <p style="font-family: var(--serif); font-size: 1.05rem;">Прежде чем письмо уйдёт родителю, я проверил текст на признаки автоматической генерации. Вот результат:</p>
+
+    <div class="check-result ${levelClass}">
+      <div class="check-score">
+        <span class="check-score-num">${check.score}<span style="font-size:1rem;">/100</span></span>
+        <span class="check-score-label">${levelText}</span>
+      </div>
+      <div class="check-bar"><div class="check-bar-fill" style="width: ${check.score}%"></div></div>
+      <p style="font-family: var(--serif); font-size: 1.05rem; margin: 0;">${verdictText}</p>
+      <ul class="check-flags">${flagsHTML}</ul>
+    </div>
+
+    <p style="font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft); letter-spacing: 0.05em; line-height: 1.4;">
+      Это эвристическая проверка — она может ошибаться. Результат проверки уйдёт в письме родителю независимо от твоего решения.
+    </p>
+
+    <div class="action-row">
+      <button class="btn" id="modalConfirm">📧 Всё равно отправить</button>
+      <button class="btn btn-secondary" onclick="closeModal()">Вернуться и переписать</button>
+    </div>
+  `;
+  document.getElementById('modalConfirm').onclick = () => {
+    closeModal();
+    onContinue();
+  };
+  document.getElementById('modalBg').classList.add('show');
+}
+
+// ============ MODAL ============
+function resetModalContent() {
+  const modal = document.querySelector('.modal');
+  modal.classList.remove('wide');
+  modal.innerHTML = `
+    <h3 id="modalTitle">Подтверждение</h3>
+    <p id="modalText"></p>
+    <div class="action-row">
+      <button class="btn" id="modalConfirm">Продолжить</button>
+      <button class="btn btn-secondary" onclick="closeModal()">Отмена</button>
+    </div>
+  `;
+}
+function showModal(title, text, onConfirm) {
+  resetModalContent();
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalText').textContent = text;
+  const btn = document.getElementById('modalConfirm');
+  if (onConfirm) {
+    btn.style.display = 'inline-block';
+    btn.onclick = () => { closeModal(); onConfirm(); };
+  } else {
+    btn.style.display = 'none';
+  }
+  document.getElementById('modalBg').classList.add('show');
+}
+function closeModal() {
+  document.getElementById('modalBg').classList.remove('show');
+}
+document.getElementById('modalBg').addEventListener('click', (e) => {
+  if (e.target.id === 'modalBg') closeModal();
+});
+
+// ============ PROGRESS ============
+function updateProgress() {
+  const pct = (state.completed.length / lessons.length) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+// ============ INIT ============
+loadState();
+document.getElementById('parentEmail').value = state.parentEmail || '';
+renderToc();
+renderProgressDashboard();
+updateProgress();
+if (state.currentDay) {
+  // не открываем автоматически — пусть сын сам выбирает, но прогресс виден
+}
+</script>
+
+</body>
+</html>
