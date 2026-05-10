@@ -883,16 +883,7 @@
   <section class="hero">
     <div class="kicker">— Подготовка к экзамену · самообучение —</div>
     <h1>Как писать <em>сочинения</em><br><span class="ampersand">&</span> эссе<br>за 14 дней.</h1>
-    <p class="lede">Курс из шести уроков с теорией, образцами разбора, ссылками для углубления и заданиями. Каждое задание сын пишет прямо здесь, копирует текст в письмо и отправляет родителю. Прогресс сохраняется в браузере.</p>
-
-    <div class="settings-bar">
-      <div>
-        <label class="settings-label" for="parentEmail">Email родителя для отправки работ</label>
-        <input type="email" id="parentEmail" placeholder="parent@example.com" value="aatamanoff@gmail.com">
-        <span class="saved-pill" id="emailSaved">✓ сохранено</span>
-      </div>
-      <button class="btn" onclick="saveEmail()">Сохранить</button>
-    </div>
+    <p class="lede">Курс из шести уроков с теорией, образцами разбора, ссылками для углубления и заданиями. Каждое задание ты пишешь прямо здесь, потом одной кнопкой отправляешь готовую работу на проверку. Прогресс сохраняется в браузере — закрыл, открыл, продолжил.</p>
   </section>
 
   <section class="progress-dashboard" id="progressDashboard">
@@ -925,19 +916,19 @@
     <div class="feature-block">
       <div class="num">01 / ШЕСТЬ УРОКОВ</div>
       <h3>По 2–3 дня на блок</h3>
-      <p>Урок открывается, читается за один-два захода. Между уроками — день на чтение текста и обдумывание задания.</p>
+      <p>Каждый урок открывается и читается за один-два захода. Между уроками — день на чтение текста и обдумывание задания.</p>
     </div>
 
     <div class="feature-block">
       <div class="num">02 / ТЕОРИЯ + ПРИМЕР + ЗАДАНИЕ</div>
       <h3>Каждый урок строится одинаково</h3>
-      <p>Сначала — короткая теория с опорой на серьёзных литературоведов (Лотман, Бахтин, Борхес). Потом — разбор образца. В конце — список тем на выбор и поле для написания.</p>
+      <p>Сначала — короткая теория с опорой на серьёзных литературоведов (Лотман, Бахтин, Борхес). Потом — разбор образца. В конце — список тем на выбор и поле, где ты пишешь свою работу.</p>
     </div>
 
     <div class="feature-block">
       <div class="num">03 / ОТПРАВКА РАБОТ</div>
-      <h3>Кнопка «Отправить родителю»</h3>
-      <p>Откроет почтовый клиент с готовым письмом: тема, текст и подпись подставляются автоматически. Прогресс и черновики хранятся в браузере — закрыл, открыл, продолжил.</p>
+      <h3>Одна кнопка — и работа отправлена</h3>
+      <p>Когда закончишь писать, нажми «Отправить» — откроется почтовый клиент с готовым письмом: тема, текст и подпись подставляются автоматически. Прогресс и черновики хранятся в браузере: закрыл, открыл, продолжил.</p>
     </div>
 
     <div class="ornament">❦</div>
@@ -1979,7 +1970,7 @@ function saveEmail() {
 
 // ============ AI DETECTOR ============
 // Эвристический анализ: ищем признаки, типичные для AI-сгенерированных текстов.
-// Не претендует на 100% точность — даёт сигнал, который родитель может проверить.
+// Не претендует на 100% точность — даёт сигнал, который проверяющий может оценить.
 function analyzeForAI(text) {
   const flags = [];
   const positives = [];
@@ -2235,7 +2226,7 @@ function renderLesson(id) {
         </div>
 
         <div class="action-row">
-          <button class="btn" onclick="sendWork(${l.id})">📧 Отправить родителю</button>
+          <button class="btn" onclick="sendWork(${l.id})">📧 Отправить работу</button>
           <button class="btn btn-secondary" onclick="markCompleted(${l.id})">✓ Отметить как сделанное</button>
           <button class="btn btn-secondary" onclick="clearDraft(${l.id})">Очистить</button>
         </div>
@@ -2344,7 +2335,7 @@ function sendWork(lessonId) {
 
   const email = state.parentEmail;
   if (!email) {
-    showModal('Нет email родителя', 'Вернись на главную и впиши email родителя в верхнем поле, потом сохрани.', () => goHome());
+    showModal('Адрес для отправки не задан', 'Похоже, что-то пошло не так с настройкой почты. Сообщи об этом тому, кто настраивал курс.', () => goHome());
     return;
   }
 
@@ -2360,7 +2351,7 @@ function actuallySendEmail(lessonId, lesson, text, topicIdx, email, check) {
   const lessonTitle = lesson.title.replace(/<[^>]+>/g, '');
   const subject = `[Литература · Урок ${lessonId}] ${lessonTitle}`;
 
-  // В письме родителю — статус AI-проверки, чтобы он сразу видел сигнал
+  // В письмо включаем статус AI-проверки, чтобы получатель сразу видел сигнал
   const aiNote = check.score < 25
     ? '✓ AI-проверка: признаков генерации не найдено'
     : check.score < 55
@@ -2395,7 +2386,7 @@ function showAICheckModal(check, onContinue) {
   const verdictText = {
     low: 'Текст похож на работу человека. Можно отправлять.',
     mid: 'Есть несколько признаков генерации. Перечитай — точно ли это твой голос?',
-    high: 'Много признаков генерации. Стоит переписать своими словами — родитель увидит результат проверки в письме.'
+    high: 'Много признаков генерации. Стоит переписать своими словами — результат проверки уйдёт вместе с работой.'
   }[check.level];
 
   const flagsHTML = check.flags.map(f =>
@@ -2406,7 +2397,7 @@ function showAICheckModal(check, onContinue) {
   modal.classList.add('wide');
   modal.innerHTML = `
     <h3>Проверка перед отправкой</h3>
-    <p style="font-family: var(--serif); font-size: 1.05rem;">Прежде чем письмо уйдёт родителю, я проверил текст на признаки автоматической генерации. Вот результат:</p>
+    <p style="font-family: var(--serif); font-size: 1.05rem;">Прежде чем работа уйдёт на проверку, я проверил текст на признаки автоматической генерации. Вот результат:</p>
 
     <div class="check-result ${levelClass}">
       <div class="check-score">
@@ -2419,7 +2410,7 @@ function showAICheckModal(check, onContinue) {
     </div>
 
     <p style="font-family: var(--mono); font-size: 0.7rem; color: var(--ink-soft); letter-spacing: 0.05em; line-height: 1.4;">
-      Это эвристическая проверка — она может ошибаться. Результат проверки уйдёт в письме родителю независимо от твоего решения.
+      Это эвристическая проверка — она может ошибаться. Результат проверки уйдёт вместе с работой независимо от твоего решения.
     </p>
 
     <div class="action-row">
@@ -2475,12 +2466,11 @@ function updateProgress() {
 
 // ============ INIT ============
 loadState();
-document.getElementById('parentEmail').value = state.parentEmail || '';
 renderToc();
 renderProgressDashboard();
 updateProgress();
 if (state.currentDay) {
-  // не открываем автоматически — пусть сын сам выбирает, но прогресс виден
+  // не открываем автоматически — пусть выбирает сам, но прогресс виден
 }
 </script>
 
